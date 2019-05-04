@@ -1,37 +1,47 @@
-<p id="notice"><%= notice %></p>
+<div class="columns border-top">
 
-<h1>Posts</h1>
+  <div class="column is-2 bg-light">
+    <div class="pl3 pr1">
+      <%= render 'panel' %>
+    </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Url</th>
-      <th>Category</th>
-      <th>Post author</th>
-      <th>Apply url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div class="column is-9 pl6">
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.description %></td>
-        <td><%= post.url %></td>
-        <td><%= post.category %></td>
-        <td><%= post.post_author %></td>
-        <td><%= post.apply_url %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="columns border-bottom pt4">
+      <div class="column is-1">
+        <% if !post.avatar.file.nil? %>
+          <%= link_to image_tag(post.avatar_url(:thumb), alt: post.post_author, width: 100, height: 100), post.url %>
+        <% end %>
+      </div>
+      <div class="column is-8">
+        <h3 class="title is-4 index-title"><%= link_to post.title, post %></h3>
+          <ul>
+            <li><%= link_to post.post_author, post.url %></li>
+          </ul>
+        <div class="pv2 f6">
+          <%= sanitize(post.description.truncate(200, separator: '</p>')) %>
+        </div>
+
+        <% if current_user.try(:admin) || post_author(post) %>
+          <ul class="pv3">
+            <li class="inline-block f6">Admin controls: </li>
+            <li class="inline-block">
+              <%= link_to 'View', post, class: 'button is-small is-link is-outlined' %></li>
+            <li class="inline-block">
+              <%= link_to 'Edit', edit_post_path(post), class: 'button is-small is-link is-outlined' %></li>
+            <li class="inline-block">
+              <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %></li>
+          </ul>
+        <% end %>
+
+        </div>
+        <div class="column has-text-right">
+          <%= category(post.category) %>
+          <p class="pt2 f6"><%= post.user.name %></p>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+</div>

@@ -1,47 +1,56 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<%= simple_form_for @post, html: { multipart: true } do |f| %>
+<%= f.error_notification %>
 
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="field">
+  <div class="control">
+    <%= f.input :title, required: true, input_html: { class: "input" }, wrapper: false, label_html: { class: "label" }, placeholder: "" %>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control">
+    <%= f.input :description, required: true, input_html: { class: "textarea" }, wrapper: false, label_html: { class: "label" } %>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="field column is-4">
+    <div class="control">
+      <label class="label">Category:</label>
+      <div class="control has-icons-left">
+        <span class="select">
+          <%= f.input_field :category, collection: Post::CATEGORIES, prompt: "Select a category" %>
+        </span>
+        <span class="icon is-small is-left">
+          <i class="fa fa-briefcase"></i>
+        </span>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+<div class="columns">
+  <div class="field column is-4">
+    <div class="control">
+      <label class="label">Image</label>
+      <div class="file">
+        <label class="file-label">
+          <%= f.input :avatar, as: :file, required: false, input_html: { class:"file-input job-avatar" }, label: false, wrapper: false %>
+          <span class="file-cta">
+            <span class="file-icon"><i class="fa fa-upload"></i></span>
+            <span class="file-label">Choose a file…</span>
+          </span>
+        </label>
+      </div>
+    </div>
   </div>
+  <div class="column">
+    <output id="list"></output>
+  </div>
+</div>
 
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url %>
-  </div>
+<hr />
 
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category %>
-  </div>
+<%= f.button :submit, class: "button is-primary is-large is-rounded mv4" %>
 
-  <div class="field">
-    <%= form.label :post_author %>
-    <%= form.text_field :post_author %>
-  </div>
-
-  <div class="field">
-    <%= form.label :apply_url %>
-    <%= form.text_field :apply_url %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

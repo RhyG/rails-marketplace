@@ -1,0 +1,25 @@
+<nav class="panel">
+    <p class="text-uppercase has-text-gray pv1 f6">filter by post type</p>
+  
+    <ul class="mb3 pa0">
+      <li class="pv1">
+        <%= link_to 'All', posts_path, class: "button is-fullwidth is-dark" %>
+      </li>
+  
+      <li class="pv1">
+        <%= link_to 'Art', posts_path(category: "Art"), class: "button is-fullwidth is-primary" %>
+      </li>
+  
+      <li class="pv1">
+        <%= link_to 'Music', posts_path(category: "Music"), class: "button is-fullwidth is-link" %>
+      </li>
+  
+      <li class="pv1">
+        <%= link_to 'Writing', posts_path(category: "Writing"), class: "button is-fullwidth is-warning" %>
+      </li>
+  
+      <li class="pv1">
+        <%= link_to 'Contract', posts_path(category: "Contract"), class: "button is-fullwidth is-info" %>
+      </li>
+    </ul>
+  </nav>

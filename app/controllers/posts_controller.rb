@@ -1,20 +1,26 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    if(params.has_key?(:category))
+      @posts = Post.where(category: params[:category]).order("created_at desc")
+    else
+      @posts = Post.all.order('created_at desc')
+    end
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post = Post.find(params[:id])
   end
 
   # GET /posts/new
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   # GET /posts/1/edit
@@ -24,7 +30,30 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
+
+    # token = params[:stripeToken]
+    # category = params[:category]
+    # post_title = params[:title]
+    # card_brand = params[:user][:card_brand]
+    # card_exp_month = params[:user][:card_exp_month]
+    # card_exp_year = params[:user][:card_exp_year]
+    # card_last4 = params[:user][:card_last4]
+
+    # charge = Stripe::Charge.create(
+    #   :amount => 30000,
+    #   :currency => "aud",
+    #   :description => category,
+    #   :statement_descriptor => post_title,
+    #   :source => token
+    # )
+
+    # current_user.stripe_id = charge_id 
+    # current_user.card_brand = card_brand
+    # current_user.card_exp_month = card_exp_month
+    # current_user.card_exp_year = card_exp_year
+    # current_user.card_last4 = card_last4
+    # current_user.save!
 
     respond_to do |format|
       if @post.save
@@ -35,6 +64,10 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+
+    rescue Stripe::CardError => e 
+      flash.alert = e.message
+      render action: :new
   end
 
   # PATCH/PUT /posts/1
@@ -69,6 +102,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :url, :category, :post_author, :apply_url)
+      params.require(:post).permit(:title, :description, :url, :category, :post_author, :apply_url, :avatar)
     end
 end

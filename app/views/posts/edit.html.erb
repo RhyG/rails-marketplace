@@ -1,6 +1,10 @@
-<h1>Editing Post</h1>
-
-<%= render 'form', post: @post %>
-
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-8 is-offset-2">
+          <h1 class="title is-3">Editing: <%= @post.title %></h1>
+          <%= render 'form', post: @post %>
+        </div>
+      </div>
+    </div>
+  </section>

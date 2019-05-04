@@ -7,6 +7,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'stripe', '~> 4.16'
 gem 'simple_form'
+gem 'figaro'
 # gem 'trix', '~> 0.11.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
