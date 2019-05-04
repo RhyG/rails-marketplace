@@ -95,7 +95,7 @@ header {
     height: 5em;
 
     .header-content {
-        width: 1180px;
+        width: inherit;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -179,7 +179,7 @@ header {
 }
 
 .content {
-    margin-top: 8em;
+    margin-top: 0em;
 
     h3 {
         font-size: 2em;
@@ -443,8 +443,11 @@ footer {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 8em;
+    width: 1180px;
+    margin: auto;
 
     .brand-logo {
+      display: none;
         width: 15%;
     }
 

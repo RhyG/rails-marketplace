@@ -1,10 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <!-- <link rel="stylesheet" href="styles/debug.css"> -->
+</head>
+
+<body>
+
+    <div class="section">
+        <div class="container">
+            <div class="columns">
+
+                <div class="column is-4">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-48x48">
+                                        <img src="https://versions.bulma.io/0.7.0/images/placeholders/96x96.png"
+                                            alt="Placeholder image">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4"><%= @user.name %></p>
+                                    <p class="subtitle is-6"><%= @user.email %></p>
+                                </div>
+                            </div>
+
+                            <div class="content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                                <a href="#">#css</a> <a href="#">#responsive</a>
+                                <br>
+                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-8 pl6">
+
+                    <div class="tile is-ancestor">
+                        <div class="tile is-parent" style="display: flex; flex-wrap: wrap;">
 
 
-<p><%= @user.name %></p>
-<ul>
-<% @user.posts.each do |post| %>
+                            <% @user.posts.each do |post| %>
+                            <div class="tile is-6 is-child"
+                                style="box-sizing: border-box !important; padding: 0 1em 1em 0 !important;">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="https://versions.bulma.io/0.7.0/images/placeholders/1280x960.png"
+                                                alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
 
-<li><%= post.title %></li>
+                                        <div class="content">
+                                            <%= post.description %>
+                                            <br>
+                                            <time >Posted <%= time_ago_in_words(post.created_at) %> ago</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% end %>
 
-<% end %>
-</ul>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

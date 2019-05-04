@@ -22,7 +22,7 @@
       <%= link_to image_tag(@post.avatar_url(:thumb), alt: @post.post_author, class: "has-text-centered"), @post.url %>
     <% end %>
 
-    <h5 class="is-5 has-text-centered"><%= link_to @post.post_author, @post.user.name %></h5>
+    <h5 class="is-5 has-text-centered"><%= link_to @post.user.name, @post.user %></h5>
 
     <div class="mt2 mb4">
     <%= link_to @post.url do %>

@@ -26,6 +26,8 @@
   </div>
   <% end %>
 
+  <% if false %>
+
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <%= link_to root_path, class:"navbar-item" do %>
@@ -68,6 +70,40 @@
       </div>
     </div>
   </nav>
+
+  <% end %>
+
+  <header>
+    
+      <div class="container header-content">
+        
+          <%= link_to 'Marketplace', root_path, class: 'nav-brand' %>
+          <nav class="header-nav">
+              <ul class="header-menu">
+  
+                  <% if user_signed_in? %>
+  
+                  <li><%= link_to 'Create post', new_post_path %></li>
+                  <li><%= link_to 'My profile', edit_user_registration_path %></li>
+                  <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+  
+                  <% else %>
+  
+                  <li><a href="">Creators</a></li>
+                  <li><a href="">Categories</a></li>
+                  <li><%= link_to 'Sign up', new_user_registration_path %></li>
+                  <li><%= link_to 'Login', new_user_session_path %></li>
+                  <!-- <li><a href="">Login</a></li> -->
+  
+                  <% end %>
+              </ul>
+          </nav>
+      </div>
+    
+  
+  </header>
+
+  
 
   <%= yield %>
 
