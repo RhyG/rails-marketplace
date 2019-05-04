@@ -1,5 +1,6 @@
-<div class="columns border-top">
 
+<div class="container">
+<div class="columns border-top">
   <div class="column is-2 bg-light">
     <div class="pl3 pr1">
       <%= render 'panel' %>
@@ -11,13 +12,13 @@
     <div class="columns border-bottom pt4">
       <div class="column is-1">
         <% if !post.avatar.file.nil? %>
-          <%= link_to image_tag(post.avatar_url(:thumb), alt: post.post_author, width: 100, height: 100), post.url %>
+          <%= link_to image_tag(post.avatar_url(:thumb), alt: post.post_author, width: 100, height: 100), post.user %>
         <% end %>
       </div>
       <div class="column is-8">
         <h3 class="title is-4 index-title"><%= link_to post.title, post %></h3>
           <ul>
-            <li><%= link_to post.post_author, post.user.name %></li>
+            <li><%= link_to post.user.name, post.user %></li>
           </ul>
         <div class="pv2 f6">
           <%= sanitize(post.description.truncate(200, separator: '</p>')) %>
@@ -38,10 +39,12 @@
         </div>
         <div class="column has-text-right">
           <%= category(post.category) %>
-          
+          <p class="pt2 f6"><%= post.user.name %></p>
         </div>
       </div>
     <% end %>
   </div>
 
+
+</div>
 </div>

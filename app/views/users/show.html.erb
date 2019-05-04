@@ -1,0 +1,8 @@
+<p><%= @user.name %></p>
+<ul>
+<% @user.posts.each do |post| %>
+
+<li><%= post.title %></li>
+
+<% end %>
+</ul>
