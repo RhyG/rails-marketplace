@@ -17,7 +17,7 @@
       <div class="column is-8">
         <h3 class="title is-4 index-title"><%= link_to post.title, post %></h3>
           <ul>
-            <li><%= link_to post.post_author, post.url %></li>
+            <li><%= link_to post.post_author, post.user.name %></li>
           </ul>
         <div class="pv2 f6">
           <%= sanitize(post.description.truncate(200, separator: '</p>')) %>
@@ -38,7 +38,7 @@
         </div>
         <div class="column has-text-right">
           <%= category(post.category) %>
-          <p class="pt2 f6"><%= post.user.name %></p>
+          
         </div>
       </div>
     <% end %>
