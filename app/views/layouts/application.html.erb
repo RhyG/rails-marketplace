@@ -68,17 +68,66 @@
       </div>
     </div>
   </nav>
-  
-    <%= yield %>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <p>
-          Visit <a href="https://web-crunch.com" target="_blank">Web-Crunch.com</a> for more builds like this one.
-        </p>
+  <%= yield %>
+
+  <footer>
+
+    <div class="brand-logo"><img src="<%= asset_path 'slack.jpg' %>" alt=""></div>
+
+    <p class="site-desc">Thundercats ramps humblebrag letterpress. Lumbersexual
+      seitan art party farm-to-table ennui polaroid offal ethical
+      salvia 90's. Gochujang put a bird on it tumeric, trust fund
+      distillery paleo listicle cronut schlitz.</p>
+
+    <div class="footer-nav">
+      <div class="menu-left">
+        <ul>
+          <li>LINKS</li>
+          <a href="">
+            <li>Home</li>
+          </a>
+          <a href="">
+            <li>Login</li>
+          </a>
+          <a href="">
+            <li>Sign up</li>
+          </a>
+          <a href="">
+            <li>Categories</li>
+          </a>
+          <a href="">
+            <li>Contact</li>
+          </a>
+        </ul>
+      </div>
+
+      <div class="menu-left">
+        <ul>
+          <li>BORING BITS</li>
+          <a href="">
+            <li>Support</li>
+          </a>
+          <a href="">
+            <li>Terms of use</li>
+          </a>
+          <a href="">
+            <li>Privacy policy</li>
+          </a>
+        </ul>
       </div>
     </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+      <div class="icons">
+
+      </div>
+
+      <p>Copyright © 2019 DanaLiamRhys</p>
+    </div>
+
   </footer>
 
 </body>

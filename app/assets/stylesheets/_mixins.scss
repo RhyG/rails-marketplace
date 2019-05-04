@@ -1,0 +1,23 @@
+@mixin heading-style {
+
+}
+
+@mixin subheading-style {
+
+}
+
+@mixin paragraph-style {
+    color: $font_colour_sub;
+    font-size: 0.9em;
+    line-height: 1.6em;
+}
+
+@mixin menu-link-style {
+    a {
+        transition: filter 1s;
+
+        &:hover {
+            filter: contrast(10%);
+        }
+    }
+}

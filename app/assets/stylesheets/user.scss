@@ -1,3 +1,474 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ 
+ */
+
+//  @import "bootstrap-sprockets";
+//  @import "bootstrap";
+
+@import 'partials/*';
+@import 'partials/layout/*';
+
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800,900');
+// @import 'mixins';
+
+$font_colour_primary: #283856;
+$font_colour_sub: #9098A6;
+$pink_light: rgba(255, 244, 245, 100);
+$pink_dark: rgba(238, 108, 122, 100);
+$pink_darker: rgb(245, 98, 113);
+
+* {
+    font-family: 'Work Sans', sans-serif;
+
+}
+
+body {}
+
+.page {
+    max-width: 1180px;
+    margin: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: $font_colour_primary;
+}
+
+a:hover,
+a:active,
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    width: 100%;
+    height: 5em;
+
+    .header-content {
+        width: 1180px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-brand {
+        font-weight: 500;
+        font-size: 2em;
+        text-decoration: none;
+        color: $font_colour_primary;
+    }
+
+    .header-nav {
+        margin-left: auto;
+        display: flex;
+
+        ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            color: $font_colour_sub;
+            margin-top: 1em;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                transition: filter 1s;
+
+                &:hover {
+                    filter: contrast(10%);
+                }
+            }
+
+            li:nth-child(-n+3) {
+                margin-right: 3em;
+            }
+        }
+    }
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    margin-top: 3em;
+
+    .hero-desc {
+        h1 {
+            color: $font_colour_primary;
+            font-size: 3.8em;
+            font-weight: 700;
+        }
+
+        p {
+            color: $font_colour_sub;
+            font-size: 1.5em;
+            transform: translateY(-1em);
+        }
+
+        .hero-btn {
+            padding: 1.2em 4em;
+            background: rgba(255, 244, 245, 100);
+            border: none;
+            color: $pink_dark;
+            transition: background-color 0.1s linear;
+            border-radius: 50px;
+
+            &:hover {
+                cursor: pointer;
+                background: rgb(250, 220, 223);
+            }
+        }
+    }
+
+    .hero-img {
+        height: 30em;
+
+        img {
+            height: 100%;
+        }
+    }
+}
+
+.content {
+    margin-top: 8em;
+
+    h3 {
+        font-size: 2em;
+        color: $font_colour_primary;
+        font-weight: 600;
+    }
+
+    p {
+        color: $font_colour_sub;
+        font-size: 1.3em;
+        margin-top: -1em;
+    }
+
+
+    .cards {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2em;
+
+        .card {
+            width: 30%;
+            // height: 27em;
+            border-radius: 5%;
+            border: none;
+            flex-shrink: 1;
+            box-shadow: 0 2px 25px -4px rgba(10, 10, 10, 0.1);
+
+            &:nth-child(2) {
+                .card-img {
+                    background-image: url('/app/assets/images/paint.jpg');
+                }
+
+                .portrait {
+                    background-image: url("img/man.jpg");
+                }
+            }
+
+            &:nth-child(3) {
+
+                .card-img {
+                    background-image: url('/img/art.jpg');
+
+                }
+
+                .portrait {
+                    background-image: url("img/lady.jpg");
+                }
+            }
+        }
+
+        .card-img {
+            height: 13em;
+            background-image: url("/img/colours.jpg");
+            background-size: cover;
+            background-position: center;
+            border-top-left-radius: 5%;
+            border-top-right-radius: 5%;
+
+            // img {
+            //     width: 100%;
+            //     border-top-left-radius: 5%;
+            //     border-top-right-radius: 5%;
+            // }
+        }
+
+        .portrait {
+            height: 6em;
+            width: 6em;
+            border-radius: 50%;
+            border: 4px solid white;
+            // transform: translateY(-50%);
+            transform: translateY(-50%);
+            margin-left: 1%;
+            background-image: url("img/girl.jpg");
+            background-position: center;
+            background-size: cover;
+            // position: relative;
+            position: absolute;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .card-text {
+            padding: 1.3em;
+
+            h4 {
+                // transform: translateY(-320%);
+                transform: translateY(-150%);
+                position: absolute;
+                margin-left: 7%;
+                font-weight: 500;
+                font-size: 1.5em;
+            }
+
+            p {
+                @include paragraph-style;
+                margin-top: 4em;
+            }
+
+            a {
+                @include paragraph-style;
+                color: $pink_dark;
+                margin-top: -3em;
+
+                &:hover {
+                    // text-decoration: none;
+                    color: $pink_darker;
+                }
+            }
+        }
+
+    }
+}
+
+
+.explore {
+    // margin-top: 2em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    h5 {
+        font-size: 1.6em;
+        color: $font_colour_primary;
+        font-weight: 600;
+    }
+
+    p {}
+
+    .explore-btn {
+        background: rgba(241, 241, 241, 100);
+        padding: 0.5em 1.5em;
+        border-radius: 50px;
+        border: none;
+        transition: background-color 0.1s linear;
+        color: $font_colour_primary;
+        font-weight: 500;
+        font-size: 1em;
+
+        &:hover {
+            cursor: pointer;
+            background: rgba(220, 220, 220, 100);
+        }
+    }
+
+    .explore-btns {
+        margin-left: 2em;
+
+        button:nth-child(-n+7) {
+            margin-right: 1em;
+        }
+    }
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8em;
+
+    .feature {
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        width: 28%;
+
+        .feature-img {
+            height: 12em;
+            width: 14em;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .feature-heading {
+            font-size: 1.4em;
+            line-height: 1.3em;
+            color: $font_colour_primary;
+            font-weight: 600;
+            margin-top: 1.5em;
+        }
+
+        .feature-desc {
+            @include paragraph-style;
+            margin-top: 1em;
+        }
+    }
+}
+
+.cta {
+    border-radius: 20px;
+    padding: 0em 3em 1em 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 25px -4px rgba(10, 10, 10, 0.1);
+    margin-top: 8em;
+
+    h3 {
+        font-size: 2em;
+        color: $font_colour_primary;
+        font-weight: 600;
+    }
+
+    p {
+        color: $font_colour_sub;
+        font-size: 1.3em;
+        margin-top: -1em;
+    }
+
+    .cta-btn {
+        padding: 1.4em 3em;
+        // background: rgba(255, 244, 245, 100);
+        background: $pink_dark;
+        border: none;
+        color: $pink_dark;
+        transition: background-color 0.1s linear;
+        border-radius: 50px;
+        color: white;
+
+        &:hover {
+            cursor: pointer;
+            // background: rgb(250, 220, 223);
+            background: $pink_darker;
+        }
+    }
+}
+
+// FORMS STYLES
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    input, textarea, select {
+        margin-bottom: 2em;
+    }
+
+    select {
+        width: 10em;
+    }
+
+    .submit-btn {
+        width: 10em;
+        padding: 1em;
+    }
+
+}
+
+// CREATE POST STYLES
+
+
+
+// FOOTER STYLES
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 8em;
+
+    .brand-logo {
+        width: 15%;
+    }
+
+    p {
+        @include paragraph-style;
+        width: 35%;
+    }
+
+    .footer-nav {
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        @include menu-link-style;
+
+        .menu-left {
+            margin-left: 9em;
+        }
+
+        li {
+            list-style: none;
+
+            &:first-child {
+                font-weight: 600;
+                color: $font_colour_primary;
+                margin-bottom: 0.7em;
+            }
+        }
+
+        a {
+            &:nth-child(n+2) {
+                li {
+                    color: $font_colour_sub;
+                    margin-top: 0.3em;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    hr {
+        margin-top: 5em;
+        width: 100%;
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        p {
+            text-align: right;
+            font-weight: 400;
+        }
+    }
+}
