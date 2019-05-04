@@ -1,47 +1,51 @@
-<div class="columns pt4 pb7">
-  <div class="column is-7 is-offset-1">
+<div class="section">
+  <div class="container">
+    <div class="columns pt4 pb7">
+      <div class="column is-7 is-offset-1">
 
-    <p class="f7"><i class="fa fa-clock"></i> Posted <%= time_ago_in_words(@post.created_at) %> ago</p>
-    <h1 class="title is-2"><%= @post.title %></h1>
+        <p class="f7"><i class="fa fa-clock"></i> Posted <%= time_ago_in_words(@post.created_at) %> ago</p>
+        <h1 class="title is-2"><%= @post.title %></h1>
 
-    <ul class="list pb4">
-      <li class="inline-block f6 pr2"><%= category(@post.category) %></li>
-    </ul>
+        <ul class="list pb4">
+          <li class="inline-block f6 pr2"><%= category(@post.category) %></li>
+        </ul>
 
-    <div class="content text-serif f4">
-      <%= @post.description.html_safe %>
+        <div class="content text-serif f4">
+          <%= @post.description.html_safe %>
+        </div>
+
+      </div>
+
+      <div class="column is-2 is-offset-1 has-text-centered">
+
+        <% if !@post.avatar.file.nil? %>
+        <%= link_to image_tag(@post.avatar_url(:thumb), alt: @post.post_author, class: "has-text-centered"), @post.url %>
+        <% end %>
+
+        <h5 class="is-5 has-text-centered"><%= link_to @post.user.name, @post.user %></h5>
+
+        <div class="mt2 mb4">
+          <%= link_to @post.url do %>
+          <i class="fa fa-globe"></i>
+          <% end %>
+        </div>
+
+        <%= link_to 'Tip this user', @post.apply_url, class:"button is-rounded is-fullwidth is-link checkoutButton" %>
+
+        <% if current_user.try(:admin) || post_author(@post) %>
+        <ul class="pv3">
+          <li class="pv1 f6">Admin controls: </li>
+          <li class="pv1 inline-block">
+            <%= link_to 'View', @post, class: 'button is-small is-link is-outlined' %></li>
+          <li class="pv1 inline-block">
+            <%= link_to 'Edit', edit_post_path(@post), class: 'button is-small is-link is-outlined' %></li>
+          <li class="pv1 inline-block">
+            <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %>
+          </li>
+        </ul>
+        <% end %>
+      </div>
     </div>
-
-    <%= link_to 'Apply to this job', @post.apply_url, class:"button is-rounded is-large is-fullwidth is-link" %>
-
-  </div>
-
-  <div class="column is-2 is-offset-1 has-text-centered">
-
-    <% if !@post.avatar.file.nil? %>
-      <%= link_to image_tag(@post.avatar_url(:thumb), alt: @post.post_author, class: "has-text-centered"), @post.url %>
-    <% end %>
-
-    <h5 class="is-5 has-text-centered"><%= link_to @post.user.name, @post.user %></h5>
-
-    <div class="mt2 mb4">
-    <%= link_to @post.url do %>
-      <i class="fa fa-globe"></i>
-    <% end %>
-    </div>
-
-    <%= link_to 'Apply to this job', @post.apply_url, class:"button is-rounded is-fullwidth is-link" %>
-
-    <% if current_user.try(:admin) || post_author(@post) %>
-      <ul class="pv3">
-        <li class="pv1 f6">Admin controls: </li>
-        <li class="pv1 inline-block">
-          <%= link_to 'View', @post, class: 'button is-small is-link is-outlined' %></li>
-        <li class="pv1 inline-block">
-          <%= link_to 'Edit', edit_post_path(@post), class: 'button is-small is-link is-outlined' %></li>
-        <li class="pv1 inline-block">
-          <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %></li>
-      </ul>
-    <% end %>
   </div>
 </div>
+
