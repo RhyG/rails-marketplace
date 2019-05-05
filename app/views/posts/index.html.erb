@@ -16,19 +16,21 @@
 
 
             <% @posts.each do |post| %>
-            <div class="tile is-4 is-child" style="box-sizing: border-box !important; padding: 0 1em 1em 0 !important; ">
+            <div class="tile is-4 is-child"
+              style="box-sizing: border-box !important; padding: 0 1em 1em 0 !important; ">
               <div class="card" style="border-radius: 10px;">
                 <div class="card-image" style="border-radius: 10px 10px 0 0;">
                   <figure class="image is-1">
-                    <div class="post-image" style="background-image: url( <%= post.avatar %> ); border-radius: 10px 10px 0 0;">
+                    <div class="post-image"
+                      style="background-image: url( <%= post.avatar %> ); border-radius: 10px 10px 0 0;">
                   </figure>
                 </div>
                 <div class="card-content">
                   <div class="media">
                     <div class="media-left">
                       <figure class="image is-48x48">
-                        <img src="https://versions.bulma.io/0.7.0/images/placeholders/96x96.png"
-                          alt="Placeholder image">
+
+                        <%= link_to image_tag('https://versions.bulma.io/0.7.0/images/placeholders/96x96.png'), post.user %>
                       </figure>
                     </div>
                     <div class="media-content">
@@ -38,10 +40,12 @@
                       <p class="title is-4" style="font-size: 1.3em !important"><%= link_to post.title, post %></p>
                       <% end %>
                       <p class="subtitle is-6">Posted <%= time_ago_in_words(post.created_at) %> ago</p>
-                      
+
                     </div>
                   </div>
-
+                  <ul class="list pb4">
+                    <li class="inline-block"><%= category(post.category) %></li>
+                  </ul>
                   <div class="content"><%= truncate(post.description, :length => 250) %>
                     <br>
                     <% if current_user.try(:admin) || post_author(post) %>
@@ -57,6 +61,7 @@
                     </ul>
                     <% end %>
                   </div>
+                  <%= link_to 'Tip this user', orders_new_path(user_id: post.user.id), class:"is-link checkoutButton" %>
                 </div>
               </div>
             </div>
