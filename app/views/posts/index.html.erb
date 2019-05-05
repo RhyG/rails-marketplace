@@ -65,7 +65,7 @@
                     <% end %>
                   </div>
                   <% if !post_author(post) %>
-                  <%= link_to 'Tip this user', orders_new_path(user_id: post.user.id), class:"is-link checkoutButton" %>
+                  <%= link_to 'Send tip', orders_new_path(user_id: post.user.id), class:"button is-small is-link checkoutButton is-rounded" %>
                   <% end %>
                 </div>
               </div>

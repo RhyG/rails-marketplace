@@ -15,11 +15,11 @@
 
 <div class="columns">
   <div class="field column is-4">
-    <div class="control">
+    <div class="control is-expanded is-fullwidth">
       <label class="label">Category:</label>
-      <div class="control has-icons-left">
-        <span class="select">
-          <%= f.input_field :category, collection: Post::CATEGORIES, prompt: "Select a category" %>
+      <div class="control has-icons-left is-expanded">
+        <span class="select is-expanded">
+          <%= f.input_field :category, collection: Post::CATEGORIES, prompt: "Category", class: "is-expanded is-fullwidth" %>
         </span>
         <span class="icon is-small is-left">
           <i class="fa fa-briefcase"></i>
@@ -35,10 +35,10 @@
       <label class="label">Image</label>
       <div class="file">
         <label class="file-label">
-          <%= f.input :avatar, as: :file, required: false, input_html: { class:"file-input job-avatar" }, label: false, wrapper: false %>
+          <%= f.input :avatar, as: :file, required: false, input_html: { class:"file-input post-avatar" }, label: false, wrapper: false %>
           <span class="file-cta">
             <span class="file-icon"><i class="fa fa-upload"></i></span>
-            <span class="file-label">Choose a file…</span>
+            <span class="file-label">Choose an image</span>
           </span>
         </label>
       </div>

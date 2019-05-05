@@ -73,97 +73,100 @@
   <% end %>
 
   <header>
-    
-      <div class="container header-content">
-        
-          <%= link_to 'Marketplace', root_path, class: 'nav-brand' %>
-          <nav class="header-nav">
-              <ul class="header-menu">
-  
-                  <% if user_signed_in? %>
-  
-                  <li><%= link_to 'Create post', new_post_path %></li>
-                  <li><%= link_to 'My profile', edit_user_registration_path %></li>
-                  <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-  
-                  <% else %>
-  
-                  <li><a href="">Creators</a></li>
-                  <li><a href="">Categories</a></li>
-                  <li><%= link_to 'Sign up', new_user_registration_path %></li>
-                  <li><%= link_to 'Login', new_user_session_path %></li>
-                  <!-- <li><a href="">Login</a></li> -->
-  
-                  <% end %>
-              </ul>
-          </nav>
-      </div>
-    
-  
+
+    <div class="container header-content">
+
+      <%= link_to 'Marketplace', root_path, class: 'nav-brand' %>
+      <nav class="header-nav">
+        <ul class="header-menu">
+
+          <% if user_signed_in? %>
+
+          <li><%= link_to 'Create post', new_post_path %></li>
+          <li><%= link_to 'My profile', edit_user_registration_path %></li>
+          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+
+          <% else %>
+
+          <li><a href="">Creators</a></li>
+          <li><a href="">Categories</a></li>
+          <li><%= link_to 'Sign up', new_user_registration_path %></li>
+          <li><%= link_to 'Login', new_user_session_path %></li>
+          <!-- <li><a href="">Login</a></li> -->
+
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+
+
   </header>
 
-  
-
   <%= yield %>
-
+  <div class="section">
+      <div class="container">
   <footer>
+    
 
-    <div class="brand-logo"><img src="<%= asset_path 'slack.jpg' %>" alt=""></div>
+        <div class="brand-logo"><img src="<%= asset_path 'slack.jpg' %>" alt=""></div>
 
-    <p class="site-desc">Thundercats ramps humblebrag letterpress. Lumbersexual
-      seitan art party farm-to-table ennui polaroid offal ethical
-      salvia 90's. Gochujang put a bird on it tumeric, trust fund
-      distillery paleo listicle cronut schlitz.</p>
+        <p class="site-desc">Thundercats ramps humblebrag letterpress. Lumbersexual
+          seitan art party farm-to-table ennui polaroid offal ethical
+          salvia 90's. Gochujang put a bird on it tumeric, trust fund
+          distillery paleo listicle cronut schlitz.</p>
 
-    <div class="footer-nav">
-      <div class="menu-left">
-        <ul>
-          <li>LINKS</li>
-          <a href="">
-            <li>Home</li>
-          </a>
-          <a href="">
-            <li>Login</li>
-          </a>
-          <a href="">
-            <li>Sign up</li>
-          </a>
-          <a href="">
-            <li>Categories</li>
-          </a>
-          <a href="">
-            <li>Contact</li>
-          </a>
-        </ul>
-      </div>
+        <div class="footer-nav">
+          <div class="menu-left">
+            <ul>
+              <li>LINKS</li>
+              <a href="">
+                <li>Home</li>
+              </a>
+              <a href="">
+                <li>Login</li>
+              </a>
+              <a href="">
+                <li>Sign up</li>
+              </a>
+              <a href="">
+                <li>Categories</li>
+              </a>
+              <a href="">
+                <li>Contact</li>
+              </a>
+            </ul>
+          </div>
 
-      <div class="menu-left">
-        <ul>
-          <li>BORING BITS</li>
-          <a href="">
-            <li>Support</li>
-          </a>
-          <a href="">
-            <li>Terms of use</li>
-          </a>
-          <a href="">
-            <li>Privacy policy</li>
-          </a>
-        </ul>
-      </div>
-    </div>
+          <div class="menu-left">
+            <ul>
+              <li>BORING BITS</li>
+              <a href="">
+                <li>Support</li>
+              </a>
+              <a href="">
+                <li>Terms of use</li>
+              </a>
+              <a href="">
+                <li>Privacy policy</li>
+              </a>
+            </ul>
+          </div>
+        </div>
 
-    <hr>
+        <hr>
 
-    <div class="footer-bottom">
-      <div class="icons">
+        <div class="footer-bottom">
+          <div class="icons">
 
-      </div>
+          </div>
 
-      <p>Copyright © 2019 DanaLiamRhys</p>
-    </div>
+          <p>Copyright © 2019 Dana & Rhys</p>
+        </div>
 
   </footer>
+
+</div>
+</div>
 
 </body>
 

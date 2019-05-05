@@ -446,11 +446,10 @@ form {
 
 // FOOTER STYLES
 footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
     margin-top: 8em;
-    width: 1180px;
     margin: auto;
 
     .brand-logo {
