@@ -1,84 +1,67 @@
-<!DOCTYPE html>
-<html>
+<div class="section">
+  <div class="container">
+    <div class="columns">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello Bulma!</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-  <!-- <link rel="stylesheet" href="styles/debug.css"> -->
-</head>
-
-<body>
-
-  <div class="section">
-    <div class="container">
-      <div class="columns">
-
-        <div class="column is-2 bg-light">
-          <div class="pl3 pr1">
-            <%= render 'panel' %>
-          </div>
+      <div class="column is-2 bg-light">
+        <div class="pl3 pr1">
+          <%= render 'panel' %>
         </div>
+      </div>
 
-        <div class="column is-10 pl6">
+      <div class="column is-10">
 
-          <div class="tile is-ancestor">
-            <div class="tile is-parent" style="display: flex; flex-wrap: wrap;">
+        <div class="tile is-ancestor">
+          <div class="tile is-parent"
+            style="display: flex; flex-wrap: wrap; padding-top: 0 !important; padding-right: 0 !important;">
 
 
-              <% @posts.each do |post| %>
-              <div class="tile is-4 is-child"
-                style="box-sizing: border-box !important; padding: 0 1em 1em 0 !important;">
-                <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-1">
-                      <img src="<%= post.avatar %>" alt="Placeholder image">
-                    </figure>
+            <% @posts.each do |post| %>
+            <div class="tile is-4 is-child" style="box-sizing: border-box !important; padding: 0 1em 1em 0 !important;">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-1">
+                    <img src="<%= post.avatar %>" alt="Image by <%= post.user.name %>">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img src="https://versions.bulma.io/0.7.0/images/placeholders/96x96.png"
+                          alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4" style="font-size: 1.3em !important"><%= link_to post.title, post %></p>
+                      <p class="subtitle is-6"><time datetime="2016-1-1"><%= post.created_at %></time></p>
+                    </div>
                   </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <div class="media-left">
-                        <figure class="image is-48x48">
-                          <img src="https://versions.bulma.io/0.7.0/images/placeholders/96x96.png"
-                            alt="Placeholder image">
-                        </figure>
-                      </div>
-                      <div class="media-content">
-                        <p class="title is-4" style="font-size: 1.3em !important"><%= link_to post.title, post %></p>
-                        <p class="subtitle is-6"><time datetime="2016-1-1"><%= post.created_at %></time></p>
-                      </div>
-                    </div>
 
-                    <div class="content"><%= truncate(post.description, :length => 250) %>
-                      <br>
-                      <% if current_user.try(:admin) || post_author(post) %>
-                      <ul class="pv3" style="margin-top: 0 !important; margin-left: 0 !important;">
-                        
-                        <li class="inline-block">
-                          <%= link_to 'View', post, class: 'button is-small is-link is-outlined' %></li>
-                        <li class="inline-block">
-                          <%= link_to 'Edit', edit_post_path(post), class: 'button is-small is-link is-outlined' %></li>
-                        <li class="inline-block">
-                          <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %>
-                        </li>
-                      </ul>
-                      <% end %>
-                    </div>
+                  <div class="content"><%= truncate(post.description, :length => 250) %>
+                    <br>
+                    <% if current_user.try(:admin) || post_author(post) %>
+                    <ul class="pv3" style="margin-top: 0 !important; margin-left: 0 !important;">
+
+                      <li class="inline-block">
+                        <%= link_to 'View', post, class: 'button is-small is-link is-outlined' %></li>
+                      <li class="inline-block">
+                        <%= link_to 'Edit', edit_post_path(post), class: 'button is-small is-link is-outlined' %></li>
+                      <li class="inline-block">
+                        <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-small is-link is-outlined' %>
+                      </li>
+                    </ul>
+                    <% end %>
                   </div>
                 </div>
               </div>
-              <% end %>
-
-
             </div>
-          </div>
+            <% end %>
 
+
+          </div>
         </div>
+
       </div>
     </div>
   </div>
-</body>
-
-</html>
+</div>
