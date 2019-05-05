@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :posts
   devise_for :users
   # root to: 'posts#index'
-  root :to => 'home#welcome'
 
   resources :users do
     collection do
@@ -18,7 +17,8 @@ Rails.application.routes.draw do
   authenticated do
     root :to => 'posts#index', as: :authenticated
   end
-  
+
+  root :to => 'home#welcome'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

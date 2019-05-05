@@ -5,14 +5,14 @@
             <p>Our business allows you to directly support the creators and cuts out the middleman allowing them
                 to
                 keep doing it for fun.</p>
-            <button class="hero-btn">View listings</button>
+            <%= link_to 'Create free account', new_user_registration_path, class:"hero-btn" %>
         </section>
         <div class="hero-image">
             <img src="<%= asset_path 'artist.svg' %>" alt="">
         </div>
     </div>
 
-    <div class="content">
+    <div class="feed-sample">
         <div class="header">
             <h3>Some recommended content</h3>
             <p>Lorem ipsum dolor amet post-ironic schlitz vegan pok pok activated charcoal fam</p>
@@ -115,6 +115,6 @@
             <h3>Ready to get started?</h3>
             <p>Create an account and connect with creators</p>
         </div>
-        <%= link_to 'Create account', new_user_registration_path, class:"button is-medium is-link is-rounded" %>
+        <%= link_to 'Create free account', new_user_registration_path, class:"button is-medium is-link is-rounded" %>
     </div>
 </div>

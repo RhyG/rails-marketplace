@@ -162,7 +162,9 @@ header {
         p {
             color: $font_colour_sub;
             font-size: 1.5em;
-            transform: translateY(0.8em);
+            // transform: translateY(0.8em);
+            margin-top: 0.8em;
+            margin-bottom: 2em;
         }
 
         .hero-btn {
@@ -190,7 +192,7 @@ header {
     }
 }
 
-.content {
+.feed-sample {
     margin-top: 8em;
 
     h3 {
@@ -202,7 +204,7 @@ header {
     p {
         color: $font_colour_sub;
         font-size: 1.3em;
-        margin-top: -1em;
+        margin-top: 0em;
     }
 
 
@@ -310,7 +312,7 @@ header {
 
 
 .explore {
-    // margin-top: 2em;
+    margin-top: 2em;
     display: flex;
     justify-content: flex-start;
     align-items: center;
