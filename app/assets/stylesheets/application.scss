@@ -246,7 +246,6 @@ header {
 
         .card-img {
             height: 13em;
-            background-image: url("/img/colours.jpg");
             background-size: cover;
             background-position: center;
             border-top-left-radius: 5%;
@@ -283,7 +282,7 @@ header {
 
             h4 {
                 // transform: translateY(-320%);
-                transform: translateY(-150%);
+                transform: translateY(-50%);
                 position: absolute;
                 margin-left: 7%;
                 font-weight: 500;

@@ -15,11 +15,11 @@
     <div class="feed-sample">
         <div class="header">
             <h3>Some recommended content</h3>
-            <p>Lorem ipsum dolor amet post-ironic schlitz vegan pok pok activated charcoal fam</p>
+            <p>Lorem ipsum dolor amet post-ironic schlitz vegan pok pok activated charcoal fam <%= @posts[5].user.name %></p>
         </div>
         <div class="post-cards">
             <div class="post-card">
-                <div class="card-img">
+                <div class="card-img" style="background-image: url( <%= @posts[0].avatar %> )">
                     <!-- <img src="img/colours.jpg" alt=""> -->
                 </div>
 
@@ -28,15 +28,14 @@
                 </div>
 
                 <div class="card-text">
-                    <h4>Amber West</h4>
-                    <p>Jean shorts iceland readymade PBR&B, celiac gentrify pickled dreamcatcher narwhal sartorial
-                        tattooed VHS crucifix vaporware woke.</p>
+                    <h4><%= @posts[0].user.name %></h4>
+                    <p><%= truncate(@posts[0].description, :length => 150) %></p>
                     <a href="">View post</a>
                 </div>
 
             </div>
             <div class="post-card">
-                <div class="card-img">
+                <div class="card-img" style="background-image: url( <%= @posts[3].avatar %> )">
                     <!-- <img src="img/colours.jpg" alt=""> -->
                 </div>
 
@@ -45,15 +44,14 @@
                 </div>
 
                 <div class="card-text">
-                    <h4>Russel Crowe</h4>
-                    <p>Humblebrag messenger bag meggings prism williamsburg gluten-free viral pinterest selvage
-                        small batch man braid shabby chic blog.</p>
+                    <h4><%= @posts[3].user.name %></h4>
+                    <p><%= truncate(@posts[3].description, :length => 150) %></p>
                     <a href="">View post</a>
                 </div>
 
             </div>
             <div class="post-card">
-                <div class="card-img">
+                <div class="card-img" style="background-image: url( <%= @posts[5].avatar %> )">
                     <!-- <img src="img/colours.jpg" alt=""> -->
                 </div>
 
@@ -62,9 +60,8 @@
                 </div>
 
                 <div class="card-text">
-                    <h4>Sarah McGee</h4>
-                    <p>Ethical truffaut thundercats, man bun direct trade hella taiyaki post-ironic. Meditation
-                        wayfarers tacos, cardigan drinking vinegar.</p>
+                    <h4><%= @posts[5].user.name %></h4>
+                    <p><%= truncate(@posts[5].description, :length => 150) %></p>
                     <a href="">View post</a>
                 </div>
             </div>
