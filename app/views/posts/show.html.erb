@@ -30,7 +30,7 @@
           <% end %>
         </div>
 
-        <%= link_to 'Tip this user', @post.apply_url, class:"button is-rounded is-fullwidth is-link checkoutButton" %>
+        <%= link_to 'Tip this user', orders_new_path(user_id: @post.user.id), class:"button is-rounded is-fullwidth is-link checkoutButton" %>
 
         <% if current_user.try(:admin) || post_author(@post) %>
         <ul class="pv3">

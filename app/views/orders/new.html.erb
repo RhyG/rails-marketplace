@@ -1,0 +1,92 @@
+<div class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-4">
+                <h4 class="title is-4">You're tipping <%= @user.name %></h4>
+                <p class="subtitle is-5">Thanks for the support!</p>
+
+                <div class="field buttons">
+                    <button class="button is-info dollarAmount" value="1">$1</button>
+                    <button class="button is-info dollarAmount" value="5">$5</button>
+                    <button class="button is-info dollarAmount" value="10">$10</button>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input class="input amountInput" type="number" placeholder="Other amount">
+                    </p>
+                </div>
+
+                <div class="field">
+                    <label class="label has-icon-left">Name (required)</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Text input">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Message (required)</label>
+                    <div class="control">
+                        <textarea class="textarea" placeholder="Textarea"></textarea>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            I agree to the <a href="#">terms and conditions</a>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-link submit">Submit</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-text">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+    function goToCheckout() {
+        stripe.redirectToCheckout({
+            sessionId: '<%= @stripe_checkout_session.id %>',
+        }).then(function (result) {
+            // If `redirectToCheckout` fails due to a browser or network
+            // error, display the localized error message to your customer
+            // using `result.error.message`.
+        });
+    }
+
+    let value = 0;
+
+    const amountButtons = Array.from(document.querySelectorAll('.dollarAmount'));
+    const amountInput = document.querySelector('.amountInput');
+    const submitButton = document.querySelector('.submit');
+
+    amountInput.addEventListener('blur', check)
+
+    function check(e) {
+        value = e.target.value;
+        console.log(value);
+    }
+
+    function storeValue(e) {
+        value = +e.target.value;
+        console.log(value);
+    }
+
+    amountButtons.forEach(button => {
+        button.addEventListener('click', storeValue)
+    })
+
+    const submit = document.querySelector('.submit');
+    submit.addEventListener('click', goToCheckout);
+</script>

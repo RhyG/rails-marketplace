@@ -26,6 +26,13 @@
   box-shadow: none !important;
 }
 
+.post-image {
+    height: 15em;  
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center;
+}
+
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/

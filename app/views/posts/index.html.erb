@@ -16,11 +16,11 @@
 
 
             <% @posts.each do |post| %>
-            <div class="tile is-4 is-child" style="box-sizing: border-box !important; padding: 0 1em 1em 0 !important;">
-              <div class="card">
-                <div class="card-image">
+            <div class="tile is-4 is-child" style="box-sizing: border-box !important; padding: 0 1em 1em 0 !important; ">
+              <div class="card" style="border-radius: 10px;">
+                <div class="card-image" style="border-radius: 10px 10px 0 0;">
                   <figure class="image is-1">
-                    <img src="<%= post.avatar %>" alt="Image by <%= post.user.name %>">
+                    <div class="post-image" style="background-image: url( <%= post.avatar %> ); border-radius: 10px 10px 0 0;">
                   </figure>
                 </div>
                 <div class="card-content">
@@ -32,8 +32,13 @@
                       </figure>
                     </div>
                     <div class="media-content">
+                      <% if post.title.to_s.length > 20 %>
+                      <p class="title is-4" style="font-size: 1em !important"><%= link_to post.title, post %></p>
+                      <% else %>
                       <p class="title is-4" style="font-size: 1.3em !important"><%= link_to post.title, post %></p>
-                      <p class="subtitle is-6"><time datetime="2016-1-1"><%= post.created_at %></time></p>
+                      <% end %>
+                      <p class="subtitle is-6">Posted <%= time_ago_in_words(post.created_at) %> ago</p>
+                      
                     </div>
                   </div>
 

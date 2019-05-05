@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'orders/new'
+  resources :order
+
   # authenticated do
   #   root :to => 'posts#index', as: :authenticated
   # end
