@@ -75,8 +75,9 @@ $pink_darker: rgb(245, 98, 113);
 body {}
 
 .page {
-    max-width: 1180px;
+    max-width: 1340px;
     margin: auto;
+    margin-bottom: 6em;
 }
 
 h1,
@@ -143,27 +144,31 @@ header {
     }
 }
 
-.hero {
+.hero-area {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-top: 3em;
 
     .hero-desc {
+        width: 50%;
         h1 {
             color: $font_colour_primary;
             font-size: 3.8em;
             font-weight: 700;
+            line-height: 1em;
         }
 
         p {
             color: $font_colour_sub;
             font-size: 1.5em;
-            transform: translateY(-1em);
+            transform: translateY(0.8em);
         }
 
         .hero-btn {
             padding: 1.2em 4em;
             background: rgba(255, 244, 245, 100);
+            margin-top: 4em;
             border: none;
             color: $pink_dark;
             transition: background-color 0.1s linear;
@@ -176,11 +181,11 @@ header {
         }
     }
 
-    .hero-img {
+    .hero-image {
         height: 30em;
+        width: 40%;
 
         img {
-            height: 100%;
         }
     }
 }
@@ -201,12 +206,12 @@ header {
     }
 
 
-    .cards {
+    .post-cards {
         display: flex;
         justify-content: space-between;
         margin-top: 2em;
 
-        .card {
+        .post-card {
             width: 30%;
             // height: 27em;
             border-radius: 5%;
@@ -382,7 +387,7 @@ header {
 
 .cta {
     border-radius: 20px;
-    padding: 0em 3em 1em 3em;
+    padding: 2em 3em 2em 3em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -398,7 +403,7 @@ header {
     p {
         color: $font_colour_sub;
         font-size: 1.3em;
-        margin-top: -1em;
+        // margin-top: -1em;
     }
 
     .cta-btn {

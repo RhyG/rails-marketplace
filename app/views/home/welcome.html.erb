@@ -1,0 +1,120 @@
+<div class="page">
+    <div class="hero-area">
+        <section class="hero-desc">
+            <h1>Support the content creators you love</h1>
+            <p>Our business allows you to directly support the creators and cuts out the middleman allowing them
+                to
+                keep doing it for fun.</p>
+            <button class="hero-btn">View listings</button>
+        </section>
+        <div class="hero-image">
+            <img src="<%= asset_path 'artist.svg' %>" alt="">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="header">
+            <h3>Some recommended content</h3>
+            <p>Lorem ipsum dolor amet post-ironic schlitz vegan pok pok activated charcoal fam</p>
+        </div>
+        <div class="post-cards">
+            <div class="post-card">
+                <div class="card-img">
+                    <!-- <img src="img/colours.jpg" alt=""> -->
+                </div>
+
+                <div class="portrait">
+                    <!-- <img src="img/girl.jpg" alt=""> -->
+                </div>
+
+                <div class="card-text">
+                    <h4>Amber West</h4>
+                    <p>Jean shorts iceland readymade PBR&B, celiac gentrify pickled dreamcatcher narwhal sartorial
+                        tattooed VHS crucifix vaporware woke.</p>
+                    <a href="">View post</a>
+                </div>
+
+            </div>
+            <div class="post-card">
+                <div class="card-img">
+                    <!-- <img src="img/colours.jpg" alt=""> -->
+                </div>
+
+                <div class="portrait">
+                    <!-- <img src="img/girl.jpg" alt=""> -->
+                </div>
+
+                <div class="card-text">
+                    <h4>Russel Crowe</h4>
+                    <p>Humblebrag messenger bag meggings prism williamsburg gluten-free viral pinterest selvage
+                        small batch man braid shabby chic blog.</p>
+                    <a href="">View post</a>
+                </div>
+
+            </div>
+            <div class="post-card">
+                <div class="card-img">
+                    <!-- <img src="img/colours.jpg" alt=""> -->
+                </div>
+
+                <div class="portrait">
+                    <!-- <img src="img/girl.jpg" alt=""> -->
+                </div>
+
+                <div class="card-text">
+                    <h4>Sarah McGee</h4>
+                    <p>Ethical truffaut thundercats, man bun direct trade hella taiyaki post-ironic. Meditation
+                        wayfarers tacos, cardigan drinking vinegar.</p>
+                    <a href="">View post</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="explore">
+        <h5>Explore</h5>
+        <div class="explore-btns">
+            <button class="explore-btn">Art</button>
+            <button class="explore-btn">Writers</button>
+            <button class="explore-btn">Video</button>
+            <button class="explore-btn">Interactive</button>
+            <button class="explore-btn">Music</button>
+            <button class="explore-btn">Podcasts</button>
+            <button class="explore-btn">Games</button>
+            <button class="explore-btn">View all</button>
+        </div>
+    </section>
+
+    <section class="features">
+
+        <div class="feature">
+            <div class="feature-img"><img src="<%= asset_path 'love.svg' %>" alt=""></div>
+            <p class="feature-heading">See what your favourite creators are up to</p>
+            <p class="feature-desc">Humblebrag messenger bag meggings prism williamsburg gluten-free viral pinterest
+                selvage small batch man braid shabby chic blog. </p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-img"><img src="<%= asset_path 'money.svg' %>" alt=""></div>
+            <p class="feature-heading">Support creators in making the content you love</p>
+            <p class="feature-desc">Jean shorts iceland readymade PBR&B, celiac gentrify pickled dreamcatcher
+                narwhal sartorial tattooed VHS crucifix vaporware woke.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-img"><img src="<%= asset_path 'chat.svg' %>" alt=""></div>
+            <p class="feature-heading">Interact with members of your favourite community</p>
+            <p class="feature-desc">Ethical truffaut thundercats, man bun direct trade hella taiyaki post-ironic.
+                Meditation wayfarers tacos, cardigan drinking vinegar.</p>
+        </div>
+
+    </section>
+
+    <div class="cta">
+        <div class="cta-text">
+            <h3>Ready to get started?</h3>
+            <p>Create an account and connect with creators</p>
+        </div>
+        <%= link_to 'Create account', new_user_registration_path, class:"button is-medium is-link is-rounded" %>
+    </div>
+</div>
