@@ -61,7 +61,7 @@ user = User.new(
     category: "Games",
     post_author: user.name,
     user_id: user.id,
-    avatar: Rails.root.join("app/assets/images/slack.jpg").open
+    avatar: Rails.root.join("app/assets/images/paint.jpg").open
   },
   {
     title: "Ep. 32 of the podcast is out!",
@@ -70,7 +70,7 @@ user = User.new(
     category: "Podcast",
     post_author: user.name,
     user_id: user.id,
-    avatar: Rails.root.join("app/assets/images/web-crunch.jpg").open
+    avatar: Rails.root.join("app/assets/images/laptop.jpg").open
   }
 ])
 
@@ -91,7 +91,7 @@ user = User.new(
     category: "Video",
     post_author: user.name,
     user_id: user.id,
-    avatar: Rails.root.join("app/assets/images/trello.jpg").open
+    avatar: Rails.root.join("app/assets/images/studio.jpg").open
   },
   {
     title: "The second version of the video is now available.",
@@ -101,7 +101,7 @@ user = User.new(
     category: "Video",
     post_author: user.name,
     user_id: user.id,
-    avatar: Rails.root.join("app/assets/images/wordpress.jpg").open
+    avatar: Rails.root.join("app/assets/images/concert.jpg").open
   }
 ])
 
@@ -122,7 +122,7 @@ user = User.new(
     category: "Writing",
     post_author: user.name,
     user_id: user.id,
-    avatar: Rails.root.join("app/assets/images/twitter.jpg").open
+    avatar: Rails.root.join("app/assets/images/colours.jpg").open
   },
   {
     title: "What does everyone think of destroying the ruling class?",
@@ -131,6 +131,6 @@ user = User.new(
     category: "Writing",
     post_author: user.name,
     user_id: user.id,
-    avatar: Rails.root.join("app/assets/images/basecamp.jpg").open
+    avatar: Rails.root.join("app/assets/images/art").open
   }
 ])
