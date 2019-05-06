@@ -28,9 +28,7 @@
                 <div class="card-content">
                   <div class="media">
                     <div class="media-left">
-                      <figure class="image is-48x48">
-
-                        <%= link_to image_tag('https://versions.bulma.io/0.7.0/images/placeholders/96x96.png'), post.user %>
+                      <figure class="image is-48x48" style="background: url( <%= post.user.avatar %>); background-size: cover; border-radius: 50%; background-postition: center center;">
                       </figure>
                     </div>
                     <div class="media-content">

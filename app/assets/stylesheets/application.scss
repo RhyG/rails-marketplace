@@ -227,7 +227,7 @@ header {
                 }
 
                 .portrait {
-                    background-image: url("img/man.jpg");
+                    // background-image: url("img/man.jpg");
                 }
             }
 
@@ -239,7 +239,7 @@ header {
                 }
 
                 .portrait {
-                    background-image: url("img/lady.jpg");
+                    // background-image: url("img/lady.jpg");
                 }
             }
         }
@@ -266,7 +266,7 @@ header {
             // transform: translateY(-50%);
             transform: translateY(-50%);
             margin-left: 1%;
-            background-image: url("img/girl.jpg");
+            // background-image: url("img/girl.jpg");
             background-position: center;
             background-size: cover;
             // position: relative;
@@ -284,14 +284,14 @@ header {
                 // transform: translateY(-320%);
                 transform: translateY(-50%);
                 position: absolute;
-                margin-left: 7%;
+                margin-left: 6%;
                 font-weight: 500;
                 font-size: 1.5em;
             }
 
             p {
                 @include paragraph-style;
-                margin-top: 4em;
+                margin-top: 2.3em;
             }
 
             a {

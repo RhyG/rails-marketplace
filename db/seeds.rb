@@ -19,6 +19,7 @@ user = User.new(
     name: "Dan Gregson",
     description: "Just a girl from Istvaan making her way.",
     email: "dan@example.com",
+    avatar: Rails.root.join("app/assets/images/man.jpg").open,
     password: "password",
     password_confirmation: "password"
   )
@@ -31,7 +32,7 @@ user = User.new(
     category: "Music",
     post_author: user.name,
     user_id: user.id,
-    avatar: Rails.root.join("app/assets/images/facebook.jpg").open
+    avatar: Rails.root.join("app/assets/images/production.jpg").open
   },
   {
     title: "My new artwork!",
@@ -40,7 +41,7 @@ user = User.new(
     category: "Art",
     post_author: user.name,
     user_id: user.id,
-    avatar: Rails.root.join("app/assets/images/basecamp.jpg").open
+    avatar: Rails.root.join("app/assets/images/filming.jpg").open
   }
 ])
 
@@ -49,6 +50,7 @@ user = User.new(
     name: "Sarah McDandy",
     description: "Just a girl from Istvaan making her way.",
     email: "sarah@example.com",
+    avatar: Rails.root.join("app/assets/images/girl.jpg").open,
     password: "123456",
     password_confirmation: "123456"
   )
@@ -79,6 +81,7 @@ user = User.new(
     name: "Jon Hanson",
     description: "Just a girl from Istvaan making her way.",
     email: "jon@example.com",
+    avatar: Rails.root.join("app/assets/images/guy.jpg").open,
     password: "qwerty",
     password_confirmation: "qwerty"
   )
@@ -110,6 +113,7 @@ user = User.new(
     name: "Chrissie Smith",
     description: "Just a girl from Istvaan making her way.",
     email: "smit@example.com",
+    avatar: Rails.root.join("app/assets/images/lady.jpg").open,
     password: "zxcvbn",
     password_confirmation: "zxcvbn"
   )
@@ -131,6 +135,6 @@ user = User.new(
     category: "Writing",
     post_author: user.name,
     user_id: user.id,
-    avatar: Rails.root.join("app/assets/images/art").open
+    avatar: Rails.root.join("app/assets/images/art.jpg").open
   }
 ])
