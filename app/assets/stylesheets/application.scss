@@ -186,9 +186,6 @@ header {
     .hero-image {
         height: 30em;
         width: 40%;
-
-        img {
-        }
     }
 }
 
@@ -225,10 +222,6 @@ header {
                 .card-img {
                     background-image: url('/app/assets/images/paint.jpg');
                 }
-
-                .portrait {
-                    // background-image: url("img/man.jpg");
-                }
             }
 
             &:nth-child(3) {
@@ -238,9 +231,9 @@ header {
 
                 }
 
-                .portrait {
-                    // background-image: url("img/lady.jpg");
-                }
+                // .portrait {
+                //     // background-image: url("img/lady.jpg");
+                // }
             }
         }
 
@@ -250,12 +243,6 @@ header {
             background-position: center;
             border-top-left-radius: 5%;
             border-top-right-radius: 5%;
-
-            // img {
-            //     width: 100%;
-            //     border-top-left-radius: 5%;
-            //     border-top-right-radius: 5%;
-            // }
         }
 
         .portrait {
