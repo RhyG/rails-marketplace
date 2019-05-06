@@ -14,21 +14,20 @@
           <%= @post.description.html_safe %>
         </div>
 
+        <div class="post-page-image">
+          <img src="<%= @post.avatar %>" alt="">
+        </div>
+
       </div>
 
       <div class="column is-2 is-offset-1 has-text-centered">
 
         <% if !@post.avatar.file.nil? %>
-        <%= link_to image_tag(@post.avatar_url(:thumb), alt: @post.post_author, class: "has-text-centered"), @post.url %>
-        <% end %>
-
-        <h5 class="is-5 has-text-centered"><%= link_to @post.user.name, @post.user %></h5>
-
-        <div class="mt2 mb4">
-          <%= link_to @post.url do %>
-          <i class="fa fa-globe"></i>
+        <div class="post-user-avatar is-centered" style="background: url(<%= @post.user.avatar %>); background-size: cover;">
           <% end %>
         </div>
+
+        <h5 class="is-5 has-text-centered"><%= link_to @post.user.name, @post.user %></h5>
 
         <%= link_to 'Tip this user', orders_new_path(user_id: @post.user.id), class:"button is-rounded is-fullwidth is-link checkoutButton" %>
 
