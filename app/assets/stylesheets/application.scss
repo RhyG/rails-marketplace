@@ -33,6 +33,21 @@
     background-position: center center;
 }
 
+.post-page-image {
+    width: 20em;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.post-user-avatar {
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+}
+
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
