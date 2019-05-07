@@ -50,15 +50,8 @@
 </div>
 
 <script>
-   
-
-    let value = 0;
-
-    const amountButtons = Array.from(document.querySelectorAll('.dollarAmount'));
-    const amountInput = document.querySelector('.amountInput');
-    const submitButton = document.querySelector('.submitButton');
-    const message = document.querySelector('.message');
-    const name = document.querySelector('.namefield');
+    var amountButtons = Array.from(document.querySelectorAll('.dollarAmount'));
+    var amountInput = document.querySelector('.amountInput');
 
     amountInput.addEventListener('blur', function (e) {
         value = e.target.value;
