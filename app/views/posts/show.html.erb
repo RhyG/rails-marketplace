@@ -20,17 +20,17 @@
 
       </div>
 
-      <div class="column is-2 is-offset-1 has-text-centered">
+      <div class="column is-2 is-offset-1 has-text-centered" style="display: flex; flex-direction: column; align-items: center;">
 
         <% if !@post.avatar.file.nil? %>
-        <div class="post-user-avatar is-centered" style="background: url(<%= @post.user.avatar %>); background-size: cover;">
+        <div class="post-user-avatar has-text-centered" style="background: url(<%= @post.user.avatar %>); background-size: cover; margin-bottom: 1em;">
           <% end %>
         </div>
 
         <h5 class="is-5 has-text-centered"><%= link_to @post.user.name, @post.user %></h5>
 
         <% if user_signed_in? %>
-        <%= link_to 'Tip this user', orders_new_path(user_id: @post.user.id), class:"button is-rounded is-fullwidth is-link checkoutButton" %>
+        <%= link_to 'Tip this user', orders_new_path(user_id: @post.user.id), class:"button is-rounded is-fullwidth is-link", style: "margin-top: 1em;" %>
         <% end %>
 
         <% if current_user.try(:admin) || post_author(@post) %>
