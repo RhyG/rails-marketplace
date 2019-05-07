@@ -1,26 +1,33 @@
 class OrdersController < ApplicationController
     def new
+      @user = User.find(params[:user_id])
+    end
+  
+    def create
       @user_id = params[:user_id]
       @user = User.find(@user_id)
+      @amount = params[:amount]
+      @message = params[:message]
+      @name = params[:name]
   
       Stripe.api_key = 'sk_test_PiAkTuZo5JEvBZIdT8MoCxTj00cegP7rVY'
   
       @stripe_checkout_session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
         line_items: [{
-          name: @user.name,
-          description: "Tipping #{@user.name}",
-          amount: 5000.to_i,
+          name: "Tipping #{@user.name}",
+          description: "Thanks #{@name}",
+          amount: @amount.to_i * 100,
           currency: 'aud',
           quantity: 1,
         }],
-        success_url: 'http://localhost:3000/success',
+        success_url: 'http://localhost:3000/',
         cancel_url: 'http://localhost:3000/cancel',
       )
     end
-  
-    def create
-      
+
+    def show
+      @user = User.find(params[:id])
     end
   end
   

@@ -1,0 +1,48 @@
+<% if false %>
+                <h4 class="title is-4">You're tipping <%= @user.name %></h4>
+                <p class="subtitle is-5">Thanks for the support!</p>
+
+                <div class="field buttons">
+                    <button class="button is-info dollarAmount" value="1">$1</button>
+                    <button class="button is-info dollarAmount" value="5">$5</button>
+                    <button class="button is-info dollarAmount" value="10">$10</button>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input class="input amountInput" type="number" placeholder="Other amount">
+                    </p>
+                </div>
+
+                <div class="field">
+                    <label class="label has-icon-left">Name (required)</label>
+                    <div class="control">
+                        <input class="input namefield" type="text" placeholder="Text input">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Message (required)</label>
+                    <div class="control">
+                        <textarea class="textarea message" placeholder="Tell them how much you love them"></textarea>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            I agree to the <a href="#">terms and conditions</a>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-link submit">Submit</button>
+                        <%= link_to 'Submit', orders_new_path(user_id: @user.id), class:"button is-link checkoutButton submit" %>
+                    </div>
+                    <div class="control">
+                        <button class="button is-text">Cancel</button>
+                    </div>
+                </div>
+                <% end %>

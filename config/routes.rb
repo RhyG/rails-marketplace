@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   end
 
   get 'orders/new'
-  resources :order
+  # resources :orders
+
+  post 'orders/create'
+  # resources :orders
 
   authenticated do
     root :to => 'posts#index', as: :authenticated
