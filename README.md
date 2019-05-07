@@ -4,8 +4,9 @@
 
 
 
-Improvements:
+Improvements and futures features:
     -Better page linking
     -Design is inconsistent
-
-Future features:
+    -Order success and failure pages
+    -Follow users
+    -Like and comment on posts
