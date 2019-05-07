@@ -29,7 +29,9 @@
 
         <h5 class="is-5 has-text-centered"><%= link_to @post.user.name, @post.user %></h5>
 
+        <% if user_signed_in? %>
         <%= link_to 'Tip this user', orders_new_path(user_id: @post.user.id), class:"button is-rounded is-fullwidth is-link checkoutButton" %>
+        <% end %>
 
         <% if current_user.try(:admin) || post_author(@post) %>
         <ul class="pv3">

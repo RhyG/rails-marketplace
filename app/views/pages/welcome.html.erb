@@ -71,14 +71,13 @@
     <section class="explore">
         <h5>Explore</h5>
         <div class="explore-btns">
-            <button class="explore-btn">Art</button>
-            <button class="explore-btn">Writers</button>
-            <button class="explore-btn">Video</button>
-            <button class="explore-btn">Interactive</button>
-            <button class="explore-btn">Music</button>
-            <button class="explore-btn">Podcasts</button>
-            <button class="explore-btn">Games</button>
-            <button class="explore-btn">View all</button>
+            <a href="/posts?category=Art" class="explore-btn">Art</a>
+            <a href="/posts?category=Writing" class="explore-btn">Writers</a>
+            <a href="/posts?category=Video" class="explore-btn">Video</a>
+            <a href="/posts?category=Games" class="explore-btn">Games</a>
+            <a href="/posts?category=Music" class="explore-btn">Music</a>
+            <a href="/posts?category=Podcast" class="explore-btn">Podcasts</a>
+            <a href="/posts" class="explore-btn">View all</a>
         </div>
     </section>
 
@@ -112,6 +111,6 @@
             <h3>Ready to get started?</h3>
             <p>Create an account and connect with creators</p>
         </div>
-        <%= link_to 'Create free account', new_user_registration_path, class:"button is-medium is-link is-rounded" %>
+        <%= link_to 'Create free account', new_user_registration_path, class:"cta-btn" %>
     </div>
 </div>

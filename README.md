@@ -2,4 +2,10 @@
 
 ### Notes
 
-Design is inconsistent
+
+
+Improvements:
+    -Better page linking
+    -Design is inconsistent
+
+Future features:
