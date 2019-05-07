@@ -15,7 +15,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.new(
-    id: 1,
     name: "Dan Gregson",
     description: "Just a girl from Istvaan making her way.",
     email: "dan@example.com",
@@ -46,7 +45,6 @@ user = User.new(
 ])
 
   user = User.new(
-    id: 2,
     name: "Sarah McDandy",
     description: "Just a girl from Istvaan making her way.",
     email: "sarah@example.com",
@@ -77,7 +75,6 @@ user = User.new(
 ])
 
   user = User.new(
-    id: 3,
     name: "Jon Hanson",
     description: "Just a girl from Istvaan making her way.",
     email: "jon@example.com",
@@ -109,7 +106,6 @@ user = User.new(
 ])
 
   user = User.new(
-    id: 4,
     name: "Chrissie Smith",
     description: "Just a girl from Istvaan making her way.",
     email: "smit@example.com",
