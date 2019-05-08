@@ -67,11 +67,11 @@
                     <br>
                     <% if current_user.try(:admin) || post_author(post) %>
                     <nav class="level" style="margin-top: 35px">
-                      <div class="level-left is-mobile">
-                        <%= link_to post, class: "level-item" do %>
+                      <div class="level-left is-mobile" style="display: flex;">
+                        <%= link_to post, class: "level-item", style: "margin: 0 1em 0 0;" do %>
                         <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
                         <% end %>
-                        <%= link_to edit_post_path(post), class: "level-item" do %>
+                        <%= link_to edit_post_path(post), class: "level-item", style: "margin: 0 1em 0 0;" do %>
                         <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
                         <% end %>
                         <%= link_to post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" } do %>
