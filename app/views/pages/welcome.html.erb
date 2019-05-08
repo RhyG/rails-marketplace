@@ -2,9 +2,7 @@
     <div class="hero-area">
         <section class="hero-desc">
             <h1>Support the content creators you love</h1>
-            <p>Our business allows you to directly support the creators and cuts out the middleman allowing them
-                to
-                keep doing it for fun.</p>
+            <p>Go straight to the source, get updates from your favourite creators and show your support. No recurring payments, no middle man.</p>
             <%= link_to 'Create free account', new_user_registration_path, class:"hero-btn" %>
         </section>
         <div class="hero-image">
@@ -15,7 +13,7 @@
     <div class="feed-sample">
         <div class="header">
             <h3>Some recommended content</h3>
-            <p>Lorem ipsum dolor amet post-ironic schlitz vegan pok pok activated charcoal fam</p>
+            <p>A selection of great content from some of our creators.</p>
         </div>
         <div class="post-cards">
             <div class="post-card">
@@ -30,7 +28,7 @@
                 <div class="card-text">
                     <h4><%= @posts[0].user.name %></h4>
                     <p><%= truncate(@posts[0].description, :length => 150) %></p>
-                    <a href="">View post</a>
+                    <%= link_to 'View post', @posts[0] %>
                 </div>
 
             </div>
@@ -46,7 +44,7 @@
                 <div class="card-text">
                     <h4><%= @posts[3].user.name %></h4>
                     <p><%= truncate(@posts[3].description, :length => 150) %></p>
-                    <a href="">View post</a>
+                    <%= link_to 'View post', @posts[3] %>
                 </div>
 
             </div>
@@ -62,7 +60,7 @@
                 <div class="card-text">
                     <h4><%= @posts[5].user.name %></h4>
                     <p><%= truncate(@posts[5].description, :length => 150) %></p>
-                    <a href="">View post</a>
+                    <%= link_to 'View post', @posts[5] %>
                 </div>
             </div>
         </div>

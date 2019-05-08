@@ -294,12 +294,13 @@ header {
             p {
                 @include paragraph-style;
                 margin-top: 2.3em;
+                margin-bottom: 2em;
             }
 
             a {
                 @include paragraph-style;
                 color: $pink_dark;
-                margin-top: -3em;
+                // margin-bottom: 2em;
 
                 &:hover {
                     // text-decoration: none;
