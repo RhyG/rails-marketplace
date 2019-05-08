@@ -1,7 +1,7 @@
 <script src="https://js.stripe.com/v3/"></script>
 
 <script>
-    var stripe = Stripe('pk_test_Iw2l8ItKdMkgJMExjezrIQ4m002trCCJxi');
+    var stripe = Stripe(' <%= ENV['stripe_publishable_key'] %> ');
 
     function goToCheckout() {
         stripe.redirectToCheckout({

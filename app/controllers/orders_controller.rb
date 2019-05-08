@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
       @message = params[:message]
       @name = params[:name]
   
-      Stripe.api_key = 'sk_test_PiAkTuZo5JEvBZIdT8MoCxTj00cegP7rVY'
+      Stripe.api_key = ENV['stripe_api_key']
   
       @stripe_checkout_session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
