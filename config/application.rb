@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Marketplace
   class Application < Rails::Application
     config.active_job.queue_adapter = :sidekiq
-    config.application_name = 'Marketplace'
+    config.application_name = 'Supportr'
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.assets.initialize_on_precompile = false

@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, only: [:edit, :create, :update, :destroy, :set_post]
 
   # GET /posts
   # GET /posts.json
@@ -32,29 +33,6 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
 
-    # token = params[:stripeToken]
-    # category = params[:category]
-    # post_title = params[:title]
-    # card_brand = params[:user][:card_brand]
-    # card_exp_month = params[:user][:card_exp_month]
-    # card_exp_year = params[:user][:card_exp_year]
-    # card_last4 = params[:user][:card_last4]
-
-    # charge = Stripe::Charge.create(
-    #   :amount => 30000,
-    #   :currency => "aud",
-    #   :description => category,
-    #   :statement_descriptor => post_title,
-    #   :source => token
-    # )
-
-    # current_user.stripe_id = charge_id 
-    # current_user.card_brand = card_brand
-    # current_user.card_exp_month = card_exp_month
-    # current_user.card_exp_year = card_exp_year
-    # current_user.card_last4 = card_last4
-    # current_user.save!
-
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -73,13 +51,15 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @post }
-      else
-        format.html { render :edit }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+    if current_user.id == Post.find(params[:id]).user.id
+      respond_to do |format|
+        if @post.update(post_params)
+          format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+          format.json { render :show, status: :ok, location: @post }
+        else
+          format.html { render :edit }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

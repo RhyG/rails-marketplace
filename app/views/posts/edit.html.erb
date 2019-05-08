@@ -2,8 +2,13 @@
     <div class="container">
       <div class="columns">
         <div class="column is-8 is-offset-2">
+          <% if current_user.id == @post.user.id %>
           <h1 class="title is-3">Editing: <%= @post.title %></h1>
           <%= render 'form', post: @post %>
+          <% else %>
+          <h1 class="title is-3">You can't do that!</h1>
+          <%= link_to 'Return', root_path %>
+          <% end %>
         </div>
       </div>
     </div>
