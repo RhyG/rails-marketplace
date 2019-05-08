@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'pages/thanks'
+  get 'pages/payment_failed'
+
   get 'orders/new'
   # resources :orders
 

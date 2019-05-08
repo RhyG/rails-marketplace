@@ -21,8 +21,8 @@ class OrdersController < ApplicationController
           currency: 'aud',
           quantity: 1,
         }],
-        success_url: 'https://gentle-tundra-45031.herokuapp.com/',
-        cancel_url: 'https://gentle-tundra-45031.herokuapp.com/',
+        success_url: 'https://supportr.herokuapp.com/pages/thanks',
+        cancel_url: 'https://supportr.herokuapp.com/pages/payment_failed',
       )
     end
 
