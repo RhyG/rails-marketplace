@@ -39,6 +39,7 @@ Improvements and futures features:
 * Follow users
 * Posts can be liked and commented on
 * Could improve overall UX
+* Mobile design of welcome page
 
 ## Tests LINK TO TESTS FILE
 
