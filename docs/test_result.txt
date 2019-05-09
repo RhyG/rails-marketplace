@@ -32,3 +32,17 @@ User
 Finished in 0.05151 seconds (files took 1.39 seconds to load)
 5 examples, 0 failures
 
+2019-05-09 18:16:45 WARN Selenium [DEPRECATION] Selenium::WebDriver::Chrome#driver_path= is deprecated. Use Selenium::WebDriver::Chrome::Service#driver_path= instead.
+
+Post
+  should create a post
+  should be able to edit a post
+  should delete a post
+
+User
+  should create a user
+  should be able to edit user information
+
+Finished in 0.09999 seconds (files took 2.62 seconds to load)
+5 examples, 0 failures
+

@@ -3,8 +3,9 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :authenticate_user!, only: [:edit, :create, :update, :destroy, :set_post]
 
-  # GET /posts
-  # GET /posts.json
+  # gets posts to display on the default page
+  # as the number of posts increased this would be updated to only retrieve a certain number of posts per category
+  # users would be given the option to view more posts
   def index
     redirect_to :controller => 'pages', :action => 'welcome' if current_user == nil
     # if statement used to display posts based on category chosen by user
@@ -21,7 +22,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  # used to create new posts
+  # renders the new post page
   def new
     if current_user == nil 
       redirect_to :controller => 'pages', :action => 'welcome'
