@@ -5,9 +5,10 @@
     Filter
   </p>
   <div class="panel-block">
-    <p class="control">
-      <input class="input is-small" type="text" placeholder="search">
-    </p>
+    <form action="<%= posts_path %>">
+      <input type="text" name="search" value="<%= @search_term %>" class="input is-small" placeholder="Search"
+        style="margin-bottom: 0 !important;">
+    </form>
   </div>
   <%= link_to 'All', posts_path, class: "panel-block" %>
   <%= link_to 'Art', posts_path(category: "Art"), class: "panel-block" %>

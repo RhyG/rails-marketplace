@@ -10,11 +10,23 @@ class PostsController < ApplicationController
     redirect_to :controller => 'pages', :action => 'welcome' if current_user == nil
     # if statement used to display posts based on category chosen by user
     # if the URL contains category params, retrieves posts where category == post category
-    if(params.has_key?(:category))
+
+    @search_term = params[:search]
+
+    if !@search_term.blank?
+      @posts = Post.where("upper(title) LIKE ?", "%#{@search_term.upcase}%")
+    elsif(params.has_key?(:category))
       @posts = Post.where(category: params[:category]).order("created_at desc")
     else
       @posts = Post.all.order('created_at desc')
     end
+
+  #   if @search_term.blank?
+  #     @authors = Author.all
+  # else
+  #     @authors = Author.where("upper(name) LIKE ?", "%#{@search_term.upcase}%") 
+  # end
+
   end
 
   # used to retrieve and display posts
