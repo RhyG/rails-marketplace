@@ -40,6 +40,7 @@ Improvements and futures features:
 * Posts can be liked and commented on
 * Could improve overall UX
 * Mobile design of welcome page
+* Better search queries, currently can only search by title
 
 ## Tests LINK TO TESTS FILE
 
