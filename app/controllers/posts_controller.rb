@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  # renders the new post page
+  # renders the new post
   def new
     if current_user == nil 
       redirect_to :controller => 'pages', :action => 'welcome'
