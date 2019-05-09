@@ -36,4 +36,4 @@ Improvements and futures features:
 * Order success and failure pages
 * Follow users
 * Posts can be liked and commented on
-* Could improve over UX
+* Could improve overall UX
