@@ -1,12 +1,12 @@
-## DEPLOYMENT LINK  
+## Link to website
   http://supportr.herokuapp.com/
 
 # TECH SUMMARY
 
-* Ruby version   
-  * ruby 2.6.2
-* Rails version   
-  * rails 5.2.3
+* Ruby and Rails versions  
+  * Ruby 2.6.2
+  * Rails 5.2.3
+
 * Gems
   * Devise - User Authentication
   * Carrierwave - Image Upload
@@ -28,6 +28,8 @@ Using bundler, which is available [here](https://bundler.io/), run the command:
 ```
 bundle install
 ```
+
+Update environment variables in application.yml
 
 Improvements and futures features:
 
