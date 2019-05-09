@@ -154,3 +154,31 @@ user = User.new(
     avatar: Rails.root.join("app/assets/images/writing2.jpg").open
   }
 ])
+  
+user = User.new(
+    name: "Darren Cones",
+    description: "I develop average little games and cram them full of paid content.",
+    email: "bigman@example.com",
+    avatar: Rails.root.join("app/assets/images/fella.jpg").open,
+    password: "zxcvbn",
+    password_confirmation: "zxcvbn"
+  )
+  user.save!
+  
+  Post.create!([{
+    title: "Just put the whole game behind a paywall, give me money.",
+    description: "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Venenatis dapibus posuere. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+    category: "Games",
+    post_author: user.name,
+    user_id: user.id,
+    avatar: Rails.root.join("app/assets/images/game.jpg").open
+  },
+  {
+    title: "Made more progress on the assets today, tell me what you think",
+    description: "Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Venenatis dapibus posuere. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+    category: "Games",
+    post_author: user.name,
+    user_id: user.id,
+    avatar: Rails.root.join("app/assets/images/game2.jpg").open
+  }
+])
