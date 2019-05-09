@@ -6,6 +6,9 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    redirect_to :controller => 'pages', :action => 'welcome' if current_user == nil
+    # if statement used to display posts based on category chosen by user
+    # if the URL contains category params, retrieves posts where category == post category
     if(params.has_key?(:category))
       @posts = Post.where(category: params[:category]).order("created_at desc")
     else
@@ -13,26 +16,28 @@ class PostsController < ApplicationController
     end
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
+  # used to retrieve and display posts
   def show
     @post = Post.find(params[:id])
   end
 
-  # GET /posts/new
+  # used to create new posts
   def new
-    @post = current_user.posts.build
+    if current_user == nil 
+      redirect_to :controller => 'pages', :action => 'welcome'
+    else
+      @post = current_user.posts.build
+    end
   end
 
-  # GET /posts/1/edit
   def edit
   end
 
-  # POST /posts
-  # POST /posts.json
+  # create post method
   def create
     @post = current_user.posts.build(post_params)
 
+    # display message at top of screen depending on success of post creation
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -43,15 +48,19 @@ class PostsController < ApplicationController
       end
     end
 
+    # will display stripe error (well, it should)
     rescue Stripe::CardError => e 
       flash.alert = e.message
       render action: :new
   end
 
-  # PATCH/PUT /posts/1
-  # PATCH/PUT /posts/1.json
+  # update post method
   def update
+
+    # if user has the correct credentials
     if current_user.id == Post.find(params[:id]).user.id
+
+      # posts success message depending on result of post creation
       respond_to do |format|
         if @post.update(post_params)
           format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -64,8 +73,7 @@ class PostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1
-  # DELETE /posts/1.json
+  # destroys posts
   def destroy
     @post.destroy
     respond_to do |format|
@@ -80,8 +88,7 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :url, :category, :post_author, :apply_url, :avatar)
+      params.require(:post).permit(:title, :description, :url, :category, :post_author, :avatar)
     end
 end
