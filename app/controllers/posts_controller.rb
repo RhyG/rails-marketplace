@@ -8,24 +8,20 @@ class PostsController < ApplicationController
   # users would be given the option to view more posts
   def index
     redirect_to :controller => 'pages', :action => 'welcome' if current_user == nil
-    # if statement used to display posts based on category chosen by user
-    # if the URL contains category params, retrieves posts where category == post category
 
+    # retrieves the search params if entered by the user
     @search_term = params[:search]
 
+    # if the search term isn't blank retrieves the post matching the query
     if !@search_term.blank?
       @posts = Post.where("upper(title) LIKE ?", "%#{@search_term.upcase}%")
+    # elsif the user has chosen a category gets it from the params and displays the matching posts
     elsif(params.has_key?(:category))
       @posts = Post.where(category: params[:category]).order("created_at desc")
+    # else gets all the posts and orders them by their created date
     else
       @posts = Post.all.order('created_at desc')
     end
-
-  #   if @search_term.blank?
-  #     @authors = Author.all
-  # else
-  #     @authors = Author.where("upper(name) LIKE ?", "%#{@search_term.upcase}%") 
-  # end
 
   end
 
