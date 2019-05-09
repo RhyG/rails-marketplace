@@ -1,7 +1,7 @@
 ## Link to website
   http://supportr.herokuapp.com/
 
-# TECH SUMMARY
+## Rundown of tech
 
 * Ruby and Rails versions  
   * Ruby 2.6.2
