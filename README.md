@@ -1,5 +1,5 @@
 ## DEPLOYMENT LINK  
-  http://INSERT_NAME_HERE.herokuapp.com/
+  http://supportr.herokuapp.com/
 
 # TECH SUMMARY
 
@@ -16,6 +16,7 @@
   * Figaro - App and ENV configuration
   * Better Errors - Improves the default
   * Bulma - CSS framework
+  * Rspec-rails - Used for testing
 
 ## Setup and run instructions
 
