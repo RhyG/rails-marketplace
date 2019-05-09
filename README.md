@@ -41,6 +41,7 @@ Improvements and futures features:
 * Could improve overall UX
 * Mobile design of welcome page
 * Better search queries, currently can only search by title
+* Handle posts missing images better
 
 ## Tests LINK TO TESTS FILE
 
