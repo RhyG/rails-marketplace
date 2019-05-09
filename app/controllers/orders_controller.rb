@@ -1,8 +1,11 @@
 class OrdersController < ApplicationController
+
+    # Gets the user for the order
     def new
       @user = User.find(params[:user_id])
     end
-  
+    
+    # create order method used to generate and process the order using the Stripe API
     def create
       @user_id = params[:user_id]
       @user = User.find(@user_id)

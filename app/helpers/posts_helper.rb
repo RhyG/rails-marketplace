@@ -1,5 +1,7 @@
 module PostsHelper
 
+    # helper for displaying and styling categories
+
     def category(category)
         if category == "Music"
             content_tag :span, "#{category}", class: "tag is-primary"
@@ -20,6 +22,7 @@ module PostsHelper
         end
     end
 
+    # helper used to check if current user has an account and is the author of the post
     def post_author(post)
         user_signed_in? && current_user.id == post.user_id
     end

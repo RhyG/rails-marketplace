@@ -12,6 +12,7 @@
   <%= tag :meta, name: "stripe-public-key", content: Figaro.env.stripe_publishable_key %>
 </head>
 
+<!-- Displays messages above header -->
 <body class="<%= yield (:body_class) %>">
   <% if flash[:notice] %>
   <div class="notification is-success global-notification">
@@ -33,7 +34,7 @@
       <nav class="header-nav">
         <ul class="header-menu">
 
-          <% if user_signed_in? %>
+          <% if user_signed_in? %> <!-- if statement used to modify navbar if user is logged in or out -->
 
           <li><%= link_to 'Feed', posts_path %></li>
           <li><%= link_to 'Create post', new_post_path %></li>
