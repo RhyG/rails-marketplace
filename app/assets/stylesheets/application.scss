@@ -51,11 +51,31 @@
 .category-panel {
     position: fixed;
     margin-top: -0.75rem;
+    background: white;
+    z-index: 2;
 }
 
 @media only screen and (max-width: 961px) {
     .category-panel {
         position: relative;
+    }
+
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1em;
+        padding: 0 0.8em 0 0.8em;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .header-menu {
+            font-size: 0.8em;
+        }
+
+        .header-nav {
+            margin-left: 0;
+        }
     }
 }
 
