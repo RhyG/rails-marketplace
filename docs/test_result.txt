@@ -1,0 +1,20 @@
+2019-05-09 14:03:08 WARN Selenium [DEPRECATION] Selenium::WebDriver::Chrome#driver_path= is deprecated. Use Selenium::WebDriver::Chrome::Service#driver_path= instead.
+
+Post
+  should create a post
+  should be able to edit a post
+  should delete a post
+
+Finished in 0.02708 seconds (files took 1.4 seconds to load)
+3 examples, 0 failures
+
+2019-05-09 14:04:23 WARN Selenium [DEPRECATION] Selenium::WebDriver::Chrome#driver_path= is deprecated. Use Selenium::WebDriver::Chrome::Service#driver_path= instead.
+
+Post
+  should create a post
+  should be able to edit a post
+  should delete a post
+
+Finished in 0.02709 seconds (files took 1.36 seconds to load)
+3 examples, 0 failures
+
