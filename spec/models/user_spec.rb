@@ -15,4 +15,8 @@ RSpec.describe User, type: :model do
     user.update(name: 'New')
     expect(user.name).to eq('New')
   end
+
+  it "should be able to delete a user" do
+    user = User.create(name: 'Tester')
+  end
 end
