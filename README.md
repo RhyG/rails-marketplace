@@ -1,12 +1,12 @@
-## DEPLOYMENT LINK  
+## Link to website
   http://supportr.herokuapp.com/
 
 # TECH SUMMARY
 
-* Ruby version   
-  * ruby 2.6.2
-* Rails version   
-  * rails 5.2.3
+* Ruby and Rails versions  
+  * Ruby 2.6.2
+  * Rails 5.2.3
+
 * Gems
   * Devise - User Authentication
   * Carrierwave - Image Upload
@@ -29,10 +29,13 @@ Using bundler, which is available [here](https://bundler.io/), run the command:
 bundle install
 ```
 
+Update environment variables in application.yml
+
 Improvements and futures features:
 
 * Better page linking
 * Design is inconsistent - didn't have time to fully style so used Bulma default styles
 * Order success and failure pages
 * Follow users
-* Like and comment on posts
+* Posts can be liked and commented on
+* Could improve overall UX

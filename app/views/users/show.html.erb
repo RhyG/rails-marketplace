@@ -83,7 +83,7 @@
                     </nav>
                     <% end %>
                   </div>
-                  <% if !post_author(post) %>
+                  <% if !post_author(post) && current_user != nil%>
                   <%= link_to 'Send tip', orders_new_path(user_id: post.user.id), class:"is-link is-info" %>
                   <% end %>
                 </div>
