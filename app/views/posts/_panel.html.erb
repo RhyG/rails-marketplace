@@ -1,38 +1,62 @@
 <!-- Filter by category panel rendered on main page -->
-<nav class="panel">
-    <p class="text-uppercase has-text-gray pv1 f6">filter by category</p>
-  
-    <ul class="mb3 pa0">
-      <li class="pv1">
-        <%= link_to 'All', posts_path, class: "button is-fullwidth is-warning" %>
-      </li>
-  
-      <li class="pv1">
-        <%= link_to 'Art', posts_path(category: "Art"), class: "button is-fullwidth is-info" %>
-      </li>
-  
-      <li class="pv1">
-        <%= link_to 'Music', posts_path(category: "Music"), class: "button is-fullwidth is-info" %>
-      </li>
-  
-      <li class="pv1">
-        <%= link_to 'Games', posts_path(category: "Games"), class: "button is-fullwidth is-info" %>
-      </li>
-  
-      <li class="pv1">
-        <%= link_to 'Video', posts_path(category: "Video"), class: "button is-fullwidth is-info" %>
-      </li>
+<nav class="panel category-panel">
 
-      <li class="pv1">
-        <%= link_to 'Writing', posts_path(category: "Writing"), class: "button is-fullwidth is-info" %>
-      </li>
+  <p class="panel-heading">
+    Filter
+  </p>
+  <div class="panel-block">
+    <form action="<%= posts_path %>">
+      <input type="text" name="search" value="<%= @search_term %>" class="input is-small" placeholder="Search"
+        style="margin-bottom: 0 !important;">
+    </form>
+  </div>
+  <%= link_to 'All', posts_path, class: "panel-block" %>
+  <%= link_to 'Art', posts_path(category: "Art"), class: "panel-block" %>
+  <%= link_to 'Music', posts_path(category: "Music"), class: "panel-block" %>
+  <%= link_to 'Games', posts_path(category: "Games"), class: "panel-block" %>
+  <%= link_to 'Video', posts_path(category: "Video"), class: "panel-block" %>
+  <%= link_to 'Writing', posts_path(category: "Writing"), class: "panel-block" %>
+  <%= link_to 'Podcast', posts_path(category: "Podcast"), class: "panel-block" %>
+  <%= link_to 'Other', posts_path(category: "Misc"), class: "panel-block" %>
 
-      <li class="pv1">
-        <%= link_to 'Podcast', posts_path(category: "Podcast"), class: "button is-fullwidth is-info" %>
-      </li>
 
-      <li class="pv1">
-        <%= link_to 'Other', posts_path(category: "Other"), class: "button is-fullwidth is-info" %>
-      </li>
-    </ul>
-  </nav>
+
+
+  <% if false %>
+  <p class="text-uppercase has-text-gray pv1 f6">filter by category</p>
+
+  <ul class="mb3 pa0">
+    <li class="pv1">
+      <%= link_to 'All', posts_path, class: "button is-fullwidth is-warning" %>
+    </li>
+
+    <li class="pv1">
+      <%= link_to 'Art', posts_path(category: "Art"), class: "button is-fullwidth is-info" %>
+    </li>
+
+    <li class="pv1">
+      <%= link_to 'Music', posts_path(category: "Music"), class: "button is-fullwidth is-info" %>
+    </li>
+
+    <li class="pv1">
+      <%= link_to 'Games', posts_path(category: "Games"), class: "button is-fullwidth is-info" %>
+    </li>
+
+    <li class="pv1">
+      <%= link_to 'Video', posts_path(category: "Video"), class: "button is-fullwidth is-info" %>
+    </li>
+
+    <li class="pv1">
+      <%= link_to 'Writing', posts_path(category: "Writing"), class: "button is-fullwidth is-info" %>
+    </li>
+
+    <li class="pv1">
+      <%= link_to 'Podcast', posts_path(category: "Podcast"), class: "button is-fullwidth is-info" %>
+    </li>
+
+    <li class="pv1">
+      <%= link_to 'Other', posts_path(category: "Other"), class: "button is-fullwidth is-info" %>
+    </li>
+  </ul>
+  <% end %>
+</nav>

@@ -48,6 +48,17 @@
     border-radius: 50%;
 }
 
+.category-panel {
+    position: fixed;
+    margin-top: -0.75rem;
+}
+
+@media only screen and (max-width: 961px) {
+    .category-panel {
+        position: relative;
+    }
+}
+
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/

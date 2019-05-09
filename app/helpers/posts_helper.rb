@@ -4,7 +4,7 @@ module PostsHelper
 
     def category(category)
         if category == "Music"
-            content_tag :span, "#{category}", class: "tag is-primary"
+            content_tag :span, "#{category}", class: "tag is-primary is-active"
         elsif category == "Games"
             content_tag :span, "#{category}", class: "tag is-link"
         elsif category == "Art"
