@@ -261,7 +261,28 @@ In future there will be many_to_many relationships when the “tags” feature i
 
 ![schema tables](app/assets/images/Schema.png)
 
+## Security Considerations
 
+*21. Discuss and analyse requirements related to information system security.* <br>
+*22. Discuss methods you will use to protect information and data.* <br>
+*23. Research what your legal obligations are in relation to handling user data.* <br>
+
+
+First and foremost a users identity should they choose to remain anonymous should be protected and we should provide absolute transparency as to how we use and store a  customer’s data. This can be achieved through a privacy policy. 
+A user should be able to manage their own data and in Europe this is now a legislated requirement. Other legal requirements include that we  must confirm that they have read our privacy policy and update them immediately should there be any changes to that policy. <br>
+
+Should a break occur, users must be notified immediately to minimize their risk of harm, ultimately this means we must be aware of any incidents that third party vendors like Stripe or Heroku experience and notify our uses of such, even if it appears that their data may not be at risk on our platform.  <br>
+
+The methods we have chose to protect information include
+
+1. Utilise Stripe as our payment management system for bookings to ensure that our user's payment data is encrypted and secured.<br>
+3. Only collect the minimum data required from users to create an account and use our service.<br>
+4. Provide users with full ability to edit and delete their data stored within the app (with the exception of past bookings which are stored in-case of legal implications)<br>
+5. Never release any user data to external third parties<br>
+6. Heroku also supplies a variety of user data protection
+Incase there is an issue with the database, Heroku offers a rollback function<br>
+7. Heroku has a backup system that consists of physical and logical backups<br>
+8. SSL is integrated which protects sensitive data during transportation between user and server<br>
 
 
 ## Tests
