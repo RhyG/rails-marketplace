@@ -165,7 +165,7 @@ So a customer Model with a foreign key of “user_id” would interact with the 
 *8. Describe the architecture of your App.*<br>
 *9. Explain the different high-level components (abstractions) in your App.*
 <br>
-
+![user journey](app/assets/images/userstory.JPG)
 Our app is built using Ruby on Rails (RoR) and follows the Model-View-Controller architecture pattern (MVC). The framework takes away much of handling of technologies and allows the developer to focus on solving the business problem. It does this with the help of convention over configuration and has strict naming conventions for Models-Views-Controllers. RoR also uses Representational State Transfer (REST) for web services which relies on the HTTP protocol for CRUD operations. Supports PostgreSQL and uses YAML. <br>
 
 #### Models 
@@ -253,6 +253,7 @@ Tasks were assigned based on proficiency and inclination. Once our “nice to ha
 *13. Describe your project’s models in terms of the relationships (active record associations) they have with each other.* <br>
 *14. User Schema* <br>
 
+![ERD](app/assets/images/ERD.JPG)
 Our database only contains two tables and prioritised simplicity for MVP and because of this there are no many_to_many relationships and thus no joining tables. This structure is normalised, contains no redundancies and it protected from update, deletion and insertion anomalies. As the application scales there should be no unnecessary restructuring of the schema due to new types of data (“tags” function) being introduced.The fields or attributes can be seen in the schema below but it’s important to note that in the database the attributes are actually the columns. For design purposes it is easier to depict the schema this way. It is important the fields or attributes in the entities are not redundant and if possible only appear once this ensures data integrity and helps to query the database more quickly. <br>
 
 Every user of our app is able to post content and accept donations. Some users can be admin. <br>
