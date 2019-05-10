@@ -48,7 +48,7 @@ Improvements and futures features - beyond MVP:
 
 User stories were first planned to get an idea of how the site would work, and how user experience would flow from start to end.
 
-<img sec="https://raw.githubusercontent.com/RhyG/rails-marketplace/master/docs/flow.JPG">
+<img src="https://raw.githubusercontent.com/RhyG/rails-marketplace/master/docs/flow.JPG">
 
 It was intended that the site be clean and modern, in the style of similar websites popular today. Accessibility was a key factor, and colours were chosen based on their contrast scores. Drawing inspiration from sites such as Dribbble, Awwwards and Behance we narrowed down a vision and overall flow.
 
