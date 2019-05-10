@@ -44,6 +44,22 @@ Improvements and futures features - beyond MVP:
 * Handle posts missing images better
 * Replace categories with tags. Posts can have many tags, and tags can have many posts.
 
+## Design process
+
+It was intended that the site be clean and modern, in the style of similar websites popular today. Accessibility was a key factor, and colours were chosen based on their contrast scores. Drawing inspiration from sites such as Dribbble, Awwwards and Behance we narrowed down a vision and overall flow.
+
+The designs were completed in Sketch, a popular UI design program.
+
+These are some of the designs, the rest can be viewed [here](https://github.com/RhyG/rails-marketplace/tree/master/docs/designs).
+
+<img src="https://raw.githubusercontent.com/RhyG/rails-marketplace/master/docs/designs/Home%20page.png" alt="home page" height="600px"/>
+<img src="https://raw.githubusercontent.com/RhyG/rails-marketplace/master/docs/designs/Account%20page.png" alt="account page" height="600px"/>
+<img src="https://raw.githubusercontent.com/RhyG/rails-marketplace/master/docs/designs/Mobile%20-%20home%20page.png" alt="mobile home page" height="600px"/>
+<img src="https://raw.githubusercontent.com/RhyG/rails-marketplace/master/docs/designs/Mobile%20-%20account%20page.png" alt="mobile account page" height="600px"/>
+<img src="https://raw.githubusercontent.com/RhyG/rails-marketplace/master/docs/designs/Tablet%20-%20home%20page.png" alt="tablet post page" height="600px"/>
+
+Our end product is fairly close to our initial designs. The main differences are in the posts layouts where time constraints saw us falling back on built in Bulma styles. In the future we would hope to achieve better consistency throughout the sites amongst the styles. 
+
 ## Tests
 
 Tests were performed using the Rspec gem. A number of tests were written to test that both users and posts can be made, updated and deleted. The results of the tests can be found at [this link](https://github.com/RhyG/rails-marketplace/blob/master/docs/test_result.txt).
