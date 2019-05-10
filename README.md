@@ -139,10 +139,13 @@ Our app is deployed on Heroku which is a Platform as a Service (PaaS) that sits 
 
 After normal DNS query procedures have taken place the Heroku router (written in Erlang, called Hermes) matches the URL with your apps dynos and forwards the HTTP request. Hermes looks for an app server (Dyno) with the capacity to handle the request. It will start one if there are none running and will choose at random which dynos it uses. Each app’s dynos are spread across a the “dyno grid” aka heroku’s servers. Heroku runs garbage collection on non-responsive apps to free up capacity. 
 
+![routers](app/assets/images/heroku.PNG)
+
 When deployed through Heroku git commands the app is compiled into a “slug” and downloaded to a railgun server, mounted and executed in a chroot sandbox. Each dyno has a it’s own isolated Unix container, is completely identical, restarts every 24 hours and can only run one slug. 
 
 Heroku provisions an instance of PostgreSQL (as previously discussed) when your application is created. This database is accessible over TCP/IP, so all dynos can access it simultaneously. 
 
+![dynos](app/assets/images/dynos.PNG)
 Essentially all two sided marketplaces are the same. At a very minimum they will have users and posts like our app. Some marketplaces like Gumtree, Airbnb and Facebook Marketplace allow users to be both sellers and buyers. So a user would *have_many* posts and be able to perform all CRUD operations on their own posts.
 
 However some marketplaces like Etsy are more complicated than our’s and may allow sellers to post multiple items for sale and allow users to purchase multiple items. These relationships would mean that a more complex data structure would be required best and normalisation would require a much more thorough approach. 
@@ -215,7 +218,7 @@ In future where abilities and technology are more familiar a wall of post its wo
 Tasks were assigned based on proficiency and inclination. Once our “nice to have’s” were defined we agreed that the assignment could extend into a learning exercise if we had time. 
 <br>
 
-Our ACTUAL timeline <br>
+<br> Our ACTUAL timeline <br>
 
 **MON** - content taught in class, Dana away, Liam sent through brainstorm. <br>
 
@@ -239,6 +242,8 @@ Our ACTUAL timeline <br>
 
 **FRI** - Tidy up readme and Submission<br>
 
+## PostgreSQL 
+<br>
 *7. Identify and describe the production database setup (i.e. postgres instance).* <br>
 *12. Discuss the database relations to be implemented.* <br>
 *13. Describe your project’s models in terms of the relationships (active record associations) they have with each other.* <br>
@@ -254,7 +259,7 @@ The posts table which contains fields for describing the type of content, locati
 
 In future there will be many_to_many relationships when the “tags” feature is implemented. This will mean that a post can has_many tags and a tag can has_many posts. To keep the database normalised and to prevent redundancy there would need to be a “Tags” entity which would contain a primary “tag_id” and a foreign “post_id” key. <br>
 
-
+![schema tables](app/assets/images/Schema.png)
 
 
 
