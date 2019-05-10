@@ -48,4 +48,11 @@ Improvements and futures features - beyond MVP:
 
 Tests were performed using the Rspec gem. A number of tests were written to test that both users and posts can be made, updated and deleted. The results of the tests can be found at [this link](https://github.com/RhyG/rails-marketplace/blob/master/docs/test_result.txt).
 
+The tests implemented were:
+
+  * Posts and users can be made
+  * Many (100 in the tests) posts and users can be made
+  * Posts and users can be edited
+  * Posts and users can be deleted
+
 In the future we would also implement tests to validate flow through the site. These tests would include form and model validation, access throughout the site based on user authentication, different route paths, etc. 

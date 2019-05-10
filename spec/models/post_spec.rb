@@ -5,6 +5,13 @@ RSpec.describe Post, type: :model do
     post = Post.create(title:'This is a test', description: 'This is a test', category: 'Writing')
     expect(post.title).to eq('This is a test')
   end
+  
+  it "should create many (100) posts" do
+    (100).times do
+      post = Post.create(title:'This is a test', description: 'This is a test', category: 'Writing')
+      expect(post.title).to eq('This is a test')
+    end
+  end
 
   it "should be able to edit a post" do
     post = Post.create(title:'This is a test', description: 'This is a test', category: 'Writing')

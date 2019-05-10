@@ -10,6 +10,13 @@ RSpec.describe User, type: :model do
     expect(user.name).to eq('Tester')
   end
   
+  it "should create many (100) users" do
+    (100).times do
+      user = User.create(name: 'Tester')
+      expect(user.name).to eq('Tester')
+    end
+  end
+  
   it "should be able to edit user information" do
     user = User.create(name: 'Tester')
     user.update(name: 'New')
