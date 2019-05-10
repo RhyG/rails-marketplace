@@ -4,19 +4,19 @@ module PostsHelper
 
     def category(category)
         if category == "Music"
-            content_tag :span, "#{category}", class: "tag"
+            content_tag :span, "#{category}", class: "tag is-primary"
         elsif category == "Games"
-            content_tag :span, "#{category}", class: "tag"
+            content_tag :span, "#{category}", class: "tag is-link"
         elsif category == "Art"
-            content_tag :span, "#{category}", class: "tag"
+            content_tag :span, "#{category}", class: "tag is-info"
         elsif category == "Video"
-            content_tag :span, "#{category}", class: "tag"
+            content_tag :span, "#{category}", class: "tag is-success"
         elsif category == "Writing"
-            content_tag :span, "#{category}", class: "tag"
+            content_tag :span, "#{category}", class: "tag is-warning"
         elsif category == "Podcast"
-            content_tag :span, "#{category}", class: "tag"
+            content_tag :span, "#{category}", class: "tag is-danger"
         elsif category == "Misc"
-            content_tag :span, "#{category}", class: "tag"
+            content_tag :span, "#{category}", class: "tag is-primary"
         else
             ""
         end
