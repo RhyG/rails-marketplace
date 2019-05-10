@@ -32,6 +32,13 @@ bundle install
 
 Update environment variables in application.yml
 
+```
+stripe_api_key:
+stripe_publishable_key:
+postgres_username:
+postgres_pass:
+```
+
 Improvements and futures features - beyond MVP:
 
 * Better page linking
