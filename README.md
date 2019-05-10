@@ -131,9 +131,8 @@ To summarize whilst PG may not be the most elegant solution to our database requ
 
 
 ## Discussion of Heroku platform and comparison to market
-<br>
-*4. Describe the network infrastructure the App may be based on.*<br>
-*11. Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).*<br>
+*4. Describe the network infrastructure the App may be based on.* <br>
+*11. Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).* <br>
 
 Our app is deployed on Heroku which is a Platform as a Service (PaaS) that sits on top  of AWS. Heroku runs apps in dynos - which are virtual machines. When you need to run more complex tasks you need to add more blocks (which can be done from CLI) this is called scaling horizontally. Alternatively you can make the blocks bigger and this called scaling vertically. 
 
@@ -156,7 +155,6 @@ There may be a products table with each products_id and details of the product l
 So a customer Model with a foreign key of “user_id” would interact with the product model through the order model. A User Model (table) would need to contain the user’s avatar, password etc - this would be different from their customer table which would be about their shipping address and contact details. 
 
 ## Questions relating to Architecture and Design of App 
-<br>
 *8. Describe the architecture of your App.*<br>
 *9. Explain the different high-level components (abstractions) in your App.*
 <br>
@@ -179,13 +177,12 @@ The routes comprise a way to tell which URL paths our application uses.
 
 #### Controllers and their Actions 
 <br>
-A controller is a Ruby class with public methods. The incoming request is routed according to routes to a method in the controller. The controller then requests data from the model and instantiates an object to be used by the view. 
-application_controller -  responsible for devise security methods
-home_controller -
-orders_controller - creates and shows Stripe payments
-pages_controller - show instances of @posts
-posts_controller - handles authentication of users and all CRUD operations
-Users_controller - show instances of @user
+A controller is a Ruby class with public methods. The incoming request is routed according to routes to a method in the controller. The controller then requests data from the model and instantiates an object to be used by the view. <br> 
+application_controller -  responsible for devise security methods<br>
+orders_controller - creates and shows Stripe payments<br>
+pages_controller - show instances of @posts<br>
+posts_controller - handles authentication of users and all CRUD operations <br>
+Users_controller - show instances of @user <br>
 
 #### Views
 <br> 
@@ -196,8 +193,11 @@ Pages - contains static pages for payment failure or success and a welcome page
 Posts - All CRUD operations 
 Users - show function for users
 <br>
+
 #### Assets
 JavaScript, CSS and Images are stored here. 
+
+
 
 
 
