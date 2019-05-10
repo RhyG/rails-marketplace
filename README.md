@@ -197,6 +197,49 @@ Users - show function for users
 #### Assets
 JavaScript, CSS and Images are stored here. 
 
+## Agile Methodology and Source Control
+<br> 
+Our application of the agile methodology is as follows. 
+<br>
+Our iterative approach was to do small sections of code written together in pairs on the one machine. Thus source control exists only on the one machine. Code is unit tested before being pushed to Rhys’s github to be ultimately deployed on heroku. 
+<br>
+Agile favours face to face communication and Rhys and I made an effort to attend class everyday and communicated clearly our restraints and commitments outside of the classroom. We were able to agree that most of the work needed to be done in the classroom. 
+<br>
+Stand-Up (Scrum) <br>
+We agreed that with only 2 weeks to get our project across the line a more frequent check in would be required other than the traditional once a morning. <br>
+We agreed to check in upon arrival, just before breaking for lunch and again as we were leaving for home. <br>
+I recorded the minutes of these meetings to avoid using a trello board as we all did not want to add further work to the process. We discussed the value of Kanban but as we had not worked together before and were not too familiar with the tech stack we decided that having to describe tasks to place on a trello board would hamper our intuitive approach as we were all still learning.  
+<br>
+In future where abilities and technology are more familiar a wall of post its would have been helpful. We decided that having to check in on something that was another account to log into lead to distraction too easily. 
+<br>
+Tasks were assigned based on proficiency and inclination. Once our “nice to have’s” were defined we agreed that the assignment could extend into a learning exercise if we had time. 
+<br>
+
+Our ACTUAL timeline <br>
+
+**MON** - content taught in class, Dana away, Liam sent through brainstorm. <br>
+
+**TUES** - content taught in class, Liam presents idea further, we agree, roles assigned. <br>
+
+**WED** - Liam rolls a new app and looks into gems/third party to support the functions of his idea, Dana focusing on research aspects, Rhys prototyping HTML.<br>
+
+**THURS** - Liam absent, Dana working on Heroku, Rhys completing HTML<br>
+
+**FRI** - Liam absent, Dana completes SAQ’s 1-7. Rhys rolls new app and works through styling. <br>
+
+**SAT** <br>
+**SUN** <br>
+**MON - PUBLIC HOL**<br>
+
+**TUES** - Liam absent - pair programming<br>
+
+**WED** - Liam absent - pair programming<br>
+
+**THURS** - Liam absent - Dana finishing Q’s 21-23, Rhys works on testing Gems with Janel<br>
+
+**FRI** - Tidy up readme and Submission<br>
+
+
 
 
 
