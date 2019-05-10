@@ -60,6 +60,27 @@ These are some of the designs, the rest can be viewed [here](https://github.com/
 
 Our end product is fairly close to our initial designs. The main differences are in the posts layouts where time constraints saw us falling back on built in Bulma styles. In the future we would hope to achieve better consistency throughout the sites amongst the styles.
 
+### User Stories
+
+**MVP:** 
+
+1. As a user I should be able to:
+2. Log in and log out
+3. Create a profile with an image and a description and delete it
+4. Post my content, edit and delete it
+5. View other users profiles
+6. Donate to or receive donations 
+
+**User Personas** 
+<br>
+*Content creator* - Dana is an illustrator, she posts her digital illustrations and in her description she advises that she that she does these for fun and if people appreciate them she’d be happy with a donation for a cup of coffee <br>
+*Podcaster* - Liam interviews his friends in the hospitality industry about their funny stories, he is hoping to raise some money for a new microphone- he advises this in his user profile description. <br>
+*Blogger* - Rachel is a blogger- she uses the platform in hopes that her content reaches more people - she’s not in it for the money<br>
+*Consumer* - Rhys enjoys a good yarn - he likes the funny stories Liam tells, he swings Liam $5 towards that new Microphone<br> 
+*Consumer* - Leo loves shoes and he loves people who love shoes. Leo see’s that an up and coming designer is trying to fund a trip to China to source a more sustainable supply line for her vegan leather sneakers. He donates the cost of her flights. <br>
+*Consumer* - Torryn has fondness for classical music and he appreciates the people who post their music online - he finds that donating $5 is just like giving a busker some shrapnel. <br>
+
+
 ## The Problem Identified and the Solution 
 *1. What is the need (i.e. challenge) that you will be addressing in your project?*<br>
 *2. Identify the problem you’re trying to solve by building this particular marketplace App? Why is it a problem that needs solving?*<br>
@@ -109,7 +130,8 @@ However it should be noted that MySQL has better security for web based applicat
 To summarize whilst PG may not be the most elegant solution to our database requirements at MVP stage it’s sophistication does allow easy scaling and forces us to be strict early on with our data integrity. It works really well with Rails and Heroku syntax making continuous deployment a little less painstaking. 
 
 
-##Discussion of Heroku platform and comparison to market<br>
+## Discussion of Heroku platform and comparison to market
+<br>
 *4. Describe the network infrastructure the App may be based on.*<br>
 *11. Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).*<br>
 
@@ -133,7 +155,8 @@ There may be a products table with each products_id and details of the product l
 
 So a customer Model with a foreign key of “user_id” would interact with the product model through the order model. A User Model (table) would need to contain the user’s avatar, password etc - this would be different from their customer table which would be about their shipping address and contact details. 
 
-## Questions relating to Architecture and Design of App <br>
+## Questions relating to Architecture and Design of App 
+<br>
 *8. Describe the architecture of your App.*<br>
 *9. Explain the different high-level components (abstractions) in your App.*
 <br>
@@ -150,10 +173,12 @@ These Models also can be seen as abstraction of the database tables. The structu
 #### Rails Server (localhost - Puma Gem) 
 The Ruby on Rails Server, is an executable that instantiates a Web Server. Whilst in development Rails server is listening on local port 3000 so your app can be accessed on the web. <br> 
 
-#### Routes <br>
+#### Routes 
+<br>
 The routes comprise a way to tell which URL paths our application uses. 
 
-#### Controllers and their Actions <br>
+#### Controllers and their Actions 
+<br>
 A controller is a Ruby class with public methods. The incoming request is routed according to routes to a method in the controller. The controller then requests data from the model and instantiates an object to be used by the view. 
 application_controller -  responsible for devise security methods
 home_controller -
@@ -162,7 +187,8 @@ pages_controller - show instances of @posts
 posts_controller - handles authentication of users and all CRUD operations
 Users_controller - show instances of @user
 
-#### Views<br> 
+#### Views
+<br> 
 Views tell the RoR architecture what HTML to render. Views rely on data that is prepared by the controller. Models should never speak directly to the view. The app/views/layout/application folder will contain the html DOCTYPE!. <br>
 Devise - these views are responsible for user registration and how the data is handled. 
 Orders - this ERB will handle redirecting the patron to Stripe
@@ -172,6 +198,7 @@ Users - show function for users
 <br>
 #### Assets
 JavaScript, CSS and Images are stored here. 
+
 
 
 
