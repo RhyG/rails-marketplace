@@ -239,7 +239,20 @@ Our ACTUAL timeline <br>
 
 **FRI** - Tidy up readme and Submission<br>
 
+*7. Identify and describe the production database setup (i.e. postgres instance).* <br>
+*12. Discuss the database relations to be implemented.* <br>
+*13. Describe your project’s models in terms of the relationships (active record associations) they have with each other.* <br>
+*14. User Schema* <br>
 
+Our database only contains two tables and prioritised simplicity for MVP and because of this there are no many_to_many relationships and thus no joining tables. This structure is normalised, contains no redundancies and it protected from update, deletion and insertion anomalies. As the application scales there should be no unnecessary restructuring of the schema due to new types of data (“tags” function) being introduced.The fields or attributes can be seen in the schema below but it’s important to note that in the database the attributes are actually the columns. For design purposes it is easier to depict the schema this way. It is important the fields or attributes in the entities are not redundant and if possible only appear once this ensures data integrity and helps to query the database more quickly. <br>
+
+Every user of our app is able to post content and accept donations. Some users can be admin. <br>
+
+The users table which contains fields for identification and those created by devise and active records conventional parameters. Some fields are not yet in production like storage of payment option. A user can exist without posts but a user has_many posts. A user can perform all CRUD operations on their own posts. They can only see other users posts. <br>
+
+The posts table which contains fields for describing the type of content, location of the content, activerecord params and belongs_to a user indicated by the user_id foreign key. This is the only association/relationship in our database at the moment. So a user can write posts to the database but post’s can not exist without a user. <br>
+
+In future there will be many_to_many relationships when the “tags” feature is implemented. This will mean that a post can has_many tags and a tag can has_many posts. To keep the database normalised and to prevent redundancy there would need to be a “Tags” entity which would contain a primary “tag_id” and a foreign “post_id” key. <br>
 
 
 
