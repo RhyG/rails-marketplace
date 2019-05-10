@@ -31,7 +31,7 @@ bundle install
 
 Update environment variables in application.yml
 
-Improvements and futures features:
+Improvements and futures features - beyond MVP:
 
 * Better page linking
 * Design is inconsistent - didn't have time to fully style so used Bulma default styles
@@ -42,8 +42,9 @@ Improvements and futures features:
 * Mobile design of welcome page
 * Better search queries, currently can only search by title
 * Handle posts missing images better
+* Replace categories with tags. Posts can have many tags, and tags can have many posts.
 
-## Tests LINK TO TESTS FILE
+## Tests
 
 Tests were performed using the Rspec gem. A number of tests were written to test that both users and posts can be made, updated and deleted. The results of the tests can be found at [this link](https://github.com/RhyG/rails-marketplace/blob/master/docs/test_result.txt).
 
