@@ -529,6 +529,10 @@ footer {
 
 @media only screen and (max-width: 961px) {
     body {
+        .page {
+            margin-bottom: 2em;
+        }
+
         .category-panel {
             position: relative;
         }
@@ -570,6 +574,7 @@ footer {
                     padding: 1em 1.5em 1em 1.5em;
                 }
             }
+
             .hero-image {
                 width: 60%;
                 height: 15em;
@@ -617,9 +622,11 @@ footer {
                             margin-bottom: 1em;
                         }
                     }
+
                     .post-card:first-child {
                         margin-bottom: 1.5em;
                     }
+
                     .post-card {
                         width: 100%;
                     }
@@ -644,6 +651,51 @@ footer {
 
         .features {
             flex-direction: column;
+            padding: 1em;
+            margin-top: 2em;
+
+            .feature {
+                width: 100%;
+                margin-top: 2em;
+            }
+        }
+
+        .cta {
+            margin: 2em 1em 1em 1em;
+            padding: 1em;
+
+            .cta-text {
+                width: 50%;
+
+                h3 {
+                    font-size: 1rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                    line-height: 1.2em;
+                    margin-top: 0.5em;
+                }
+            }
+
+            .cta-btn {
+                padding: 0.5em 0.8em 0.5em 0.8em;
+                font-size: 0.8rem;
+            }
+        }
+
+        footer {
+            p {
+                display: none;
+            }
+
+            .footer-nav {
+                width: 100%;
+
+                .menu-left {
+                    margin-left: 0;
+                }
+            }
         }
     }
 }
